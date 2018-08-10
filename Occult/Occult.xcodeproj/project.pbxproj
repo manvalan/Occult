@@ -13,6 +13,38 @@
 		31D59A2F211DC7060071D3CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31D59A2D211DC7060071D3CE /* Main.storyboard */; };
 		31D59A3B211DC7070071D3CE /* OccultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A3A211DC7070071D3CE /* OccultTests.swift */; };
 		31D59A46211DC7070071D3CE /* OccultUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A45211DC7070071D3CE /* OccultUITests.swift */; };
+		31D59A56211DD2830071D3CE /* StreamReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A54211DD2830071D3CE /* StreamReader.swift */; };
+		31D59A57211DD2830071D3CE /* StreamWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A55211DD2830071D3CE /* StreamWriter.swift */; };
+		31D59A5A211DD2910071D3CE /* AstroBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A59211DD2910071D3CE /* AstroBase.swift */; };
+		31D59A60211DD2990071D3CE /* JPLDEDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A5C211DD2990071D3CE /* JPLDEDialog.swift */; };
+		31D59A61211DD2990071D3CE /* JPLDE_SourceFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A5D211DD2990071D3CE /* JPLDE_SourceFile.swift */; };
+		31D59A62211DD2990071D3CE /* JPLDE_Ephem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A5E211DD2990071D3CE /* JPLDE_Ephem.swift */; };
+		31D59A63211DD2990071D3CE /* JPLDE_CreateFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A5F211DD2990071D3CE /* JPLDE_CreateFile.swift */; };
+		31D59A74211DD2AC0071D3CE /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A65211DD2AC0071D3CE /* Random.swift */; };
+		31D59A75211DD2AC0071D3CE /* VectorStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A66211DD2AC0071D3CE /* VectorStatistics.swift */; };
+		31D59A76211DD2AC0071D3CE /* VectorArithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A67211DD2AC0071D3CE /* VectorArithmetic.swift */; };
+		31D59A77211DD2AC0071D3CE /* MatrixTrigonometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A68211DD2AC0071D3CE /* MatrixTrigonometry.swift */; };
+		31D59A78211DD2AC0071D3CE /* MatrixStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A69211DD2AC0071D3CE /* MatrixStatistics.swift */; };
+		31D59A79211DD2AC0071D3CE /* VectorExponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A6A211DD2AC0071D3CE /* VectorExponent.swift */; };
+		31D59A7A211DD2AC0071D3CE /* MatrixExponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A6B211DD2AC0071D3CE /* MatrixExponent.swift */; };
+		31D59A7B211DD2AC0071D3CE /* MatrixArithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A6C211DD2AC0071D3CE /* MatrixArithmetic.swift */; };
+		31D59A7C211DD2AC0071D3CE /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A6D211DD2AC0071D3CE /* Operators.swift */; };
+		31D59A7D211DD2AC0071D3CE /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A6E211DD2AC0071D3CE /* Vector.swift */; };
+		31D59A7E211DD2AC0071D3CE /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A6F211DD2AC0071D3CE /* Util.swift */; };
+		31D59A7F211DD2AC0071D3CE /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A70211DD2AC0071D3CE /* Matrix.swift */; };
+		31D59A80211DD2AC0071D3CE /* Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A71211DD2AC0071D3CE /* Numeric.swift */; };
+		31D59A81211DD2AC0071D3CE /* VectorTrigonometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A72211DD2AC0071D3CE /* VectorTrigonometry.swift */; };
+		31D59A82211DD2AC0071D3CE /* MatrixAlgebra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A73211DD2AC0071D3CE /* MatrixAlgebra.swift */; };
+		31D59A8D211DD2CA0071D3CE /* MOSunPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A83211DD2C90071D3CE /* MOSunPosition.swift */; };
+		31D59A8E211DD2CA0071D3CE /* MOAsteroidElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A84211DD2C90071D3CE /* MOAsteroidElement.swift */; };
+		31D59A8F211DD2CA0071D3CE /* MOKepler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A85211DD2C90071D3CE /* MOKepler.swift */; };
+		31D59A90211DD2CA0071D3CE /* MOVSOP87.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A86211DD2C90071D3CE /* MOVSOP87.swift */; };
+		31D59A91211DD2CA0071D3CE /* MOPerturbation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A87211DD2CA0071D3CE /* MOPerturbation.swift */; };
+		31D59A92211DD2CA0071D3CE /* MOStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A88211DD2CA0071D3CE /* MOStar.swift */; };
+		31D59A93211DD2CA0071D3CE /* MOHorizon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A89211DD2CA0071D3CE /* MOHorizon.swift */; };
+		31D59A94211DD2CA0071D3CE /* MOData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A8A211DD2CA0071D3CE /* MOData.swift */; };
+		31D59A95211DD2CA0071D3CE /* MOAsteroid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A8B211DD2CA0071D3CE /* MOAsteroid.swift */; };
+		31D59A96211DD2CA0071D3CE /* prova.txt in Resources */ = {isa = PBXBuildFile; fileRef = 31D59A8C211DD2CA0071D3CE /* prova.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +78,38 @@
 		31D59A41211DC7070071D3CE /* OccultUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OccultUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		31D59A45211DC7070071D3CE /* OccultUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OccultUITests.swift; sourceTree = "<group>"; };
 		31D59A47211DC7070071D3CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31D59A54211DD2830071D3CE /* StreamReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamReader.swift; sourceTree = "<group>"; };
+		31D59A55211DD2830071D3CE /* StreamWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamWriter.swift; sourceTree = "<group>"; };
+		31D59A59211DD2910071D3CE /* AstroBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstroBase.swift; sourceTree = "<group>"; };
+		31D59A5C211DD2990071D3CE /* JPLDEDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPLDEDialog.swift; sourceTree = "<group>"; };
+		31D59A5D211DD2990071D3CE /* JPLDE_SourceFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPLDE_SourceFile.swift; sourceTree = "<group>"; };
+		31D59A5E211DD2990071D3CE /* JPLDE_Ephem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPLDE_Ephem.swift; sourceTree = "<group>"; };
+		31D59A5F211DD2990071D3CE /* JPLDE_CreateFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPLDE_CreateFile.swift; sourceTree = "<group>"; };
+		31D59A65211DD2AC0071D3CE /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
+		31D59A66211DD2AC0071D3CE /* VectorStatistics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorStatistics.swift; sourceTree = "<group>"; };
+		31D59A67211DD2AC0071D3CE /* VectorArithmetic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorArithmetic.swift; sourceTree = "<group>"; };
+		31D59A68211DD2AC0071D3CE /* MatrixTrigonometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixTrigonometry.swift; sourceTree = "<group>"; };
+		31D59A69211DD2AC0071D3CE /* MatrixStatistics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixStatistics.swift; sourceTree = "<group>"; };
+		31D59A6A211DD2AC0071D3CE /* VectorExponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorExponent.swift; sourceTree = "<group>"; };
+		31D59A6B211DD2AC0071D3CE /* MatrixExponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixExponent.swift; sourceTree = "<group>"; };
+		31D59A6C211DD2AC0071D3CE /* MatrixArithmetic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixArithmetic.swift; sourceTree = "<group>"; };
+		31D59A6D211DD2AC0071D3CE /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		31D59A6E211DD2AC0071D3CE /* Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
+		31D59A6F211DD2AC0071D3CE /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		31D59A70211DD2AC0071D3CE /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
+		31D59A71211DD2AC0071D3CE /* Numeric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Numeric.swift; sourceTree = "<group>"; };
+		31D59A72211DD2AC0071D3CE /* VectorTrigonometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorTrigonometry.swift; sourceTree = "<group>"; };
+		31D59A73211DD2AC0071D3CE /* MatrixAlgebra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixAlgebra.swift; sourceTree = "<group>"; };
+		31D59A83211DD2C90071D3CE /* MOSunPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOSunPosition.swift; sourceTree = "<group>"; };
+		31D59A84211DD2C90071D3CE /* MOAsteroidElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOAsteroidElement.swift; sourceTree = "<group>"; };
+		31D59A85211DD2C90071D3CE /* MOKepler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOKepler.swift; sourceTree = "<group>"; };
+		31D59A86211DD2C90071D3CE /* MOVSOP87.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOVSOP87.swift; sourceTree = "<group>"; };
+		31D59A87211DD2CA0071D3CE /* MOPerturbation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOPerturbation.swift; sourceTree = "<group>"; };
+		31D59A88211DD2CA0071D3CE /* MOStar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOStar.swift; sourceTree = "<group>"; };
+		31D59A89211DD2CA0071D3CE /* MOHorizon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHorizon.swift; sourceTree = "<group>"; };
+		31D59A8A211DD2CA0071D3CE /* MOData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOData.swift; sourceTree = "<group>"; };
+		31D59A8B211DD2CA0071D3CE /* MOAsteroid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOAsteroid.swift; sourceTree = "<group>"; };
+		31D59A8C211DD2CA0071D3CE /* prova.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = prova.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +160,20 @@
 		31D59A26211DC7050071D3CE /* Occult */ = {
 			isa = PBXGroup;
 			children = (
+				31D59A8B211DD2CA0071D3CE /* MOAsteroid.swift */,
+				31D59A84211DD2C90071D3CE /* MOAsteroidElement.swift */,
+				31D59A8A211DD2CA0071D3CE /* MOData.swift */,
+				31D59A89211DD2CA0071D3CE /* MOHorizon.swift */,
+				31D59A85211DD2C90071D3CE /* MOKepler.swift */,
+				31D59A87211DD2CA0071D3CE /* MOPerturbation.swift */,
+				31D59A88211DD2CA0071D3CE /* MOStar.swift */,
+				31D59A83211DD2C90071D3CE /* MOSunPosition.swift */,
+				31D59A86211DD2C90071D3CE /* MOVSOP87.swift */,
+				31D59A8C211DD2CA0071D3CE /* prova.txt */,
+				31D59A64211DD2AC0071D3CE /* Math */,
+				31D59A5B211DD2990071D3CE /* JPLDE */,
+				31D59A58211DD2910071D3CE /* AstroBase */,
+				31D59A53211DD2830071D3CE /* Stream */,
 				31D59A27211DC7050071D3CE /* AppDelegate.swift */,
 				31D59A29211DC7050071D3CE /* ViewController.swift */,
 				31D59A2B211DC7060071D3CE /* Assets.xcassets */,
@@ -122,6 +200,56 @@
 				31D59A47211DC7070071D3CE /* Info.plist */,
 			);
 			path = OccultUITests;
+			sourceTree = "<group>";
+		};
+		31D59A53211DD2830071D3CE /* Stream */ = {
+			isa = PBXGroup;
+			children = (
+				31D59A54211DD2830071D3CE /* StreamReader.swift */,
+				31D59A55211DD2830071D3CE /* StreamWriter.swift */,
+			);
+			path = Stream;
+			sourceTree = "<group>";
+		};
+		31D59A58211DD2910071D3CE /* AstroBase */ = {
+			isa = PBXGroup;
+			children = (
+				31D59A59211DD2910071D3CE /* AstroBase.swift */,
+			);
+			path = AstroBase;
+			sourceTree = "<group>";
+		};
+		31D59A5B211DD2990071D3CE /* JPLDE */ = {
+			isa = PBXGroup;
+			children = (
+				31D59A5C211DD2990071D3CE /* JPLDEDialog.swift */,
+				31D59A5D211DD2990071D3CE /* JPLDE_SourceFile.swift */,
+				31D59A5E211DD2990071D3CE /* JPLDE_Ephem.swift */,
+				31D59A5F211DD2990071D3CE /* JPLDE_CreateFile.swift */,
+			);
+			path = JPLDE;
+			sourceTree = "<group>";
+		};
+		31D59A64211DD2AC0071D3CE /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				31D59A65211DD2AC0071D3CE /* Random.swift */,
+				31D59A66211DD2AC0071D3CE /* VectorStatistics.swift */,
+				31D59A67211DD2AC0071D3CE /* VectorArithmetic.swift */,
+				31D59A68211DD2AC0071D3CE /* MatrixTrigonometry.swift */,
+				31D59A69211DD2AC0071D3CE /* MatrixStatistics.swift */,
+				31D59A6A211DD2AC0071D3CE /* VectorExponent.swift */,
+				31D59A6B211DD2AC0071D3CE /* MatrixExponent.swift */,
+				31D59A6C211DD2AC0071D3CE /* MatrixArithmetic.swift */,
+				31D59A6D211DD2AC0071D3CE /* Operators.swift */,
+				31D59A6E211DD2AC0071D3CE /* Vector.swift */,
+				31D59A6F211DD2AC0071D3CE /* Util.swift */,
+				31D59A70211DD2AC0071D3CE /* Matrix.swift */,
+				31D59A71211DD2AC0071D3CE /* Numeric.swift */,
+				31D59A72211DD2AC0071D3CE /* VectorTrigonometry.swift */,
+				31D59A73211DD2AC0071D3CE /* MatrixAlgebra.swift */,
+			);
+			path = Math;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +358,7 @@
 			files = (
 				31D59A2C211DC7060071D3CE /* Assets.xcassets in Resources */,
 				31D59A2F211DC7060071D3CE /* Main.storyboard in Resources */,
+				31D59A96211DD2CA0071D3CE /* prova.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,8 +383,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31D59A56211DD2830071D3CE /* StreamReader.swift in Sources */,
+				31D59A75211DD2AC0071D3CE /* VectorStatistics.swift in Sources */,
+				31D59A7B211DD2AC0071D3CE /* MatrixArithmetic.swift in Sources */,
+				31D59A80211DD2AC0071D3CE /* Numeric.swift in Sources */,
+				31D59A62211DD2990071D3CE /* JPLDE_Ephem.swift in Sources */,
+				31D59A74211DD2AC0071D3CE /* Random.swift in Sources */,
+				31D59A63211DD2990071D3CE /* JPLDE_CreateFile.swift in Sources */,
+				31D59A7A211DD2AC0071D3CE /* MatrixExponent.swift in Sources */,
+				31D59A7E211DD2AC0071D3CE /* Util.swift in Sources */,
+				31D59A82211DD2AC0071D3CE /* MatrixAlgebra.swift in Sources */,
+				31D59A91211DD2CA0071D3CE /* MOPerturbation.swift in Sources */,
 				31D59A2A211DC7050071D3CE /* ViewController.swift in Sources */,
+				31D59A8F211DD2CA0071D3CE /* MOKepler.swift in Sources */,
+				31D59A90211DD2CA0071D3CE /* MOVSOP87.swift in Sources */,
+				31D59A76211DD2AC0071D3CE /* VectorArithmetic.swift in Sources */,
+				31D59A5A211DD2910071D3CE /* AstroBase.swift in Sources */,
+				31D59A79211DD2AC0071D3CE /* VectorExponent.swift in Sources */,
+				31D59A93211DD2CA0071D3CE /* MOHorizon.swift in Sources */,
+				31D59A61211DD2990071D3CE /* JPLDE_SourceFile.swift in Sources */,
+				31D59A60211DD2990071D3CE /* JPLDEDialog.swift in Sources */,
+				31D59A92211DD2CA0071D3CE /* MOStar.swift in Sources */,
+				31D59A7F211DD2AC0071D3CE /* Matrix.swift in Sources */,
+				31D59A81211DD2AC0071D3CE /* VectorTrigonometry.swift in Sources */,
+				31D59A57211DD2830071D3CE /* StreamWriter.swift in Sources */,
+				31D59A8E211DD2CA0071D3CE /* MOAsteroidElement.swift in Sources */,
+				31D59A77211DD2AC0071D3CE /* MatrixTrigonometry.swift in Sources */,
+				31D59A7D211DD2AC0071D3CE /* Vector.swift in Sources */,
 				31D59A28211DC7050071D3CE /* AppDelegate.swift in Sources */,
+				31D59A95211DD2CA0071D3CE /* MOAsteroid.swift in Sources */,
+				31D59A78211DD2AC0071D3CE /* MatrixStatistics.swift in Sources */,
+				31D59A94211DD2CA0071D3CE /* MOData.swift in Sources */,
+				31D59A7C211DD2AC0071D3CE /* Operators.swift in Sources */,
+				31D59A8D211DD2CA0071D3CE /* MOSunPosition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
