@@ -16,10 +16,6 @@
 		31D59A56211DD2830071D3CE /* StreamReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A54211DD2830071D3CE /* StreamReader.swift */; };
 		31D59A57211DD2830071D3CE /* StreamWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A55211DD2830071D3CE /* StreamWriter.swift */; };
 		31D59A5A211DD2910071D3CE /* AstroBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A59211DD2910071D3CE /* AstroBase.swift */; };
-		31D59A60211DD2990071D3CE /* JPLDEDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A5C211DD2990071D3CE /* JPLDEDialog.swift */; };
-		31D59A61211DD2990071D3CE /* JPLDE_SourceFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A5D211DD2990071D3CE /* JPLDE_SourceFile.swift */; };
-		31D59A62211DD2990071D3CE /* JPLDE_Ephem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A5E211DD2990071D3CE /* JPLDE_Ephem.swift */; };
-		31D59A63211DD2990071D3CE /* JPLDE_CreateFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A5F211DD2990071D3CE /* JPLDE_CreateFile.swift */; };
 		31D59A74211DD2AC0071D3CE /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A65211DD2AC0071D3CE /* Random.swift */; };
 		31D59A75211DD2AC0071D3CE /* VectorStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A66211DD2AC0071D3CE /* VectorStatistics.swift */; };
 		31D59A76211DD2AC0071D3CE /* VectorArithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A67211DD2AC0071D3CE /* VectorArithmetic.swift */; };
@@ -45,6 +41,11 @@
 		31D59A94211DD2CA0071D3CE /* MOData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A8A211DD2CA0071D3CE /* MOData.swift */; };
 		31D59A95211DD2CA0071D3CE /* MOAsteroid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A8B211DD2CA0071D3CE /* MOAsteroid.swift */; };
 		31D59A96211DD2CA0071D3CE /* prova.txt in Resources */ = {isa = PBXBuildFile; fileRef = 31D59A8C211DD2CA0071D3CE /* prova.txt */; };
+		31D59A98211DFB4C0071D3CE /* DefaultConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A97211DFB4C0071D3CE /* DefaultConfig.swift */; };
+		31D59A9A211DFC820071D3CE /* AtStartForTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A99211DFC820071D3CE /* AtStartForTest.swift */; };
+		31D59FF3211F14610071D3CE /* unxp2000.405 in Resources */ = {isa = PBXBuildFile; fileRef = 31D59FF2211F14600071D3CE /* unxp2000.405 */; };
+		31D5A00F211F46A80071D3CE /* jpl_eph.c in Sources */ = {isa = PBXBuildFile; fileRef = 31D5A00E211F46A80071D3CE /* jpl_eph.c */; };
+		31D5A06E211F50D80071D3CE /* JPLDE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D5A06D211F50D80071D3CE /* JPLDE.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,10 +82,6 @@
 		31D59A54211DD2830071D3CE /* StreamReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamReader.swift; sourceTree = "<group>"; };
 		31D59A55211DD2830071D3CE /* StreamWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamWriter.swift; sourceTree = "<group>"; };
 		31D59A59211DD2910071D3CE /* AstroBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstroBase.swift; sourceTree = "<group>"; };
-		31D59A5C211DD2990071D3CE /* JPLDEDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPLDEDialog.swift; sourceTree = "<group>"; };
-		31D59A5D211DD2990071D3CE /* JPLDE_SourceFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPLDE_SourceFile.swift; sourceTree = "<group>"; };
-		31D59A5E211DD2990071D3CE /* JPLDE_Ephem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPLDE_Ephem.swift; sourceTree = "<group>"; };
-		31D59A5F211DD2990071D3CE /* JPLDE_CreateFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPLDE_CreateFile.swift; sourceTree = "<group>"; };
 		31D59A65211DD2AC0071D3CE /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
 		31D59A66211DD2AC0071D3CE /* VectorStatistics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorStatistics.swift; sourceTree = "<group>"; };
 		31D59A67211DD2AC0071D3CE /* VectorArithmetic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorArithmetic.swift; sourceTree = "<group>"; };
@@ -110,6 +107,14 @@
 		31D59A8A211DD2CA0071D3CE /* MOData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOData.swift; sourceTree = "<group>"; };
 		31D59A8B211DD2CA0071D3CE /* MOAsteroid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOAsteroid.swift; sourceTree = "<group>"; };
 		31D59A8C211DD2CA0071D3CE /* prova.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = prova.txt; sourceTree = "<group>"; };
+		31D59A97211DFB4C0071D3CE /* DefaultConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultConfig.swift; sourceTree = "<group>"; };
+		31D59A99211DFC820071D3CE /* AtStartForTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtStartForTest.swift; sourceTree = "<group>"; };
+		31D59FF2211F14600071D3CE /* unxp2000.405 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = unxp2000.405; sourceTree = "<group>"; };
+		31D5A00C211F46A70071D3CE /* Occult-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Occult-Bridging-Header.h"; sourceTree = "<group>"; };
+		31D5A00D211F46A80071D3CE /* jpl_eph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jpl_eph.h; sourceTree = "<group>"; };
+		31D5A00E211F46A80071D3CE /* jpl_eph.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = jpl_eph.c; sourceTree = "<group>"; };
+		31D5A010211F47E80071D3CE /* jpl_int.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jpl_int.h; sourceTree = "<group>"; };
+		31D5A06D211F50D80071D3CE /* JPLDE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPLDE.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +149,7 @@
 				31D59A39211DC7070071D3CE /* OccultTests */,
 				31D59A44211DC7070071D3CE /* OccultUITests */,
 				31D59A25211DC7050071D3CE /* Products */,
+				31D59FF0211F14600071D3CE /* data */,
 			);
 			sourceTree = "<group>";
 		};
@@ -175,6 +181,8 @@
 				31D59A58211DD2910071D3CE /* AstroBase */,
 				31D59A53211DD2830071D3CE /* Stream */,
 				31D59A27211DC7050071D3CE /* AppDelegate.swift */,
+				31D59A99211DFC820071D3CE /* AtStartForTest.swift */,
+				31D59A97211DFB4C0071D3CE /* DefaultConfig.swift */,
 				31D59A29211DC7050071D3CE /* ViewController.swift */,
 				31D59A2B211DC7060071D3CE /* Assets.xcassets */,
 				31D59A2D211DC7060071D3CE /* Main.storyboard */,
@@ -222,10 +230,11 @@
 		31D59A5B211DD2990071D3CE /* JPLDE */ = {
 			isa = PBXGroup;
 			children = (
-				31D59A5C211DD2990071D3CE /* JPLDEDialog.swift */,
-				31D59A5D211DD2990071D3CE /* JPLDE_SourceFile.swift */,
-				31D59A5E211DD2990071D3CE /* JPLDE_Ephem.swift */,
-				31D59A5F211DD2990071D3CE /* JPLDE_CreateFile.swift */,
+				31D5A00D211F46A80071D3CE /* jpl_eph.h */,
+				31D5A010211F47E80071D3CE /* jpl_int.h */,
+				31D5A00E211F46A80071D3CE /* jpl_eph.c */,
+				31D5A00C211F46A70071D3CE /* Occult-Bridging-Header.h */,
+				31D5A06D211F50D80071D3CE /* JPLDE.swift */,
 			);
 			path = JPLDE;
 			sourceTree = "<group>";
@@ -250,6 +259,22 @@
 				31D59A73211DD2AC0071D3CE /* MatrixAlgebra.swift */,
 			);
 			path = Math;
+			sourceTree = "<group>";
+		};
+		31D59FF0211F14600071D3CE /* data */ = {
+			isa = PBXGroup;
+			children = (
+				31D59FF1211F14600071D3CE /* JPLDE */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		31D59FF1211F14600071D3CE /* JPLDE */ = {
+			isa = PBXGroup;
+			children = (
+				31D59FF2211F14600071D3CE /* unxp2000.405 */,
+			);
+			path = JPLDE;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,6 +345,18 @@
 				TargetAttributes = {
 					31D59A23211DC7050071D3CE = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.Mac = {
+								enabled = 1;
+							};
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					31D59A35211DC7070071D3CE = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -356,6 +393,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31D59FF3211F14610071D3CE /* unxp2000.405 in Resources */,
 				31D59A2C211DC7060071D3CE /* Assets.xcassets in Resources */,
 				31D59A2F211DC7060071D3CE /* Main.storyboard in Resources */,
 				31D59A96211DD2CA0071D3CE /* prova.txt in Resources */,
@@ -387,27 +425,27 @@
 				31D59A75211DD2AC0071D3CE /* VectorStatistics.swift in Sources */,
 				31D59A7B211DD2AC0071D3CE /* MatrixArithmetic.swift in Sources */,
 				31D59A80211DD2AC0071D3CE /* Numeric.swift in Sources */,
-				31D59A62211DD2990071D3CE /* JPLDE_Ephem.swift in Sources */,
 				31D59A74211DD2AC0071D3CE /* Random.swift in Sources */,
-				31D59A63211DD2990071D3CE /* JPLDE_CreateFile.swift in Sources */,
 				31D59A7A211DD2AC0071D3CE /* MatrixExponent.swift in Sources */,
 				31D59A7E211DD2AC0071D3CE /* Util.swift in Sources */,
 				31D59A82211DD2AC0071D3CE /* MatrixAlgebra.swift in Sources */,
 				31D59A91211DD2CA0071D3CE /* MOPerturbation.swift in Sources */,
+				31D59A98211DFB4C0071D3CE /* DefaultConfig.swift in Sources */,
 				31D59A2A211DC7050071D3CE /* ViewController.swift in Sources */,
+				31D5A06E211F50D80071D3CE /* JPLDE.swift in Sources */,
 				31D59A8F211DD2CA0071D3CE /* MOKepler.swift in Sources */,
 				31D59A90211DD2CA0071D3CE /* MOVSOP87.swift in Sources */,
 				31D59A76211DD2AC0071D3CE /* VectorArithmetic.swift in Sources */,
 				31D59A5A211DD2910071D3CE /* AstroBase.swift in Sources */,
 				31D59A79211DD2AC0071D3CE /* VectorExponent.swift in Sources */,
 				31D59A93211DD2CA0071D3CE /* MOHorizon.swift in Sources */,
-				31D59A61211DD2990071D3CE /* JPLDE_SourceFile.swift in Sources */,
-				31D59A60211DD2990071D3CE /* JPLDEDialog.swift in Sources */,
+				31D59A9A211DFC820071D3CE /* AtStartForTest.swift in Sources */,
 				31D59A92211DD2CA0071D3CE /* MOStar.swift in Sources */,
 				31D59A7F211DD2AC0071D3CE /* Matrix.swift in Sources */,
 				31D59A81211DD2AC0071D3CE /* VectorTrigonometry.swift in Sources */,
 				31D59A57211DD2830071D3CE /* StreamWriter.swift in Sources */,
 				31D59A8E211DD2CA0071D3CE /* MOAsteroidElement.swift in Sources */,
+				31D5A00F211F46A80071D3CE /* jpl_eph.c in Sources */,
 				31D59A77211DD2AC0071D3CE /* MatrixTrigonometry.swift in Sources */,
 				31D59A7D211DD2AC0071D3CE /* Vector.swift in Sources */,
 				31D59A28211DC7050071D3CE /* AppDelegate.swift in Sources */,
@@ -579,6 +617,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Occult/Occult.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -590,6 +629,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = GAM.Occult;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Occult/JPLDE/Occult-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -598,6 +639,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Occult/Occult.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -609,6 +651,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = GAM.Occult;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Occult/JPLDE/Occult-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
