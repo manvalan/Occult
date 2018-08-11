@@ -14,7 +14,7 @@ class AtStartForTest {
     let defConfig :DefaultConfig = DefaultConfig()
 
     init () {
-        
+        var jplDEEff = JPLDE()
         var nam: [ String ] = Array( repeating: "" , count: 10 )
         var val: [ Double ]  = Array( repeating: 0.0 , count: 10 )
         
@@ -35,6 +35,8 @@ class AtStartForTest {
         }
        
         var ephemeris_file = Bundle.main.resourcePath! + "/unxp2000.405"
+        
+       
         //jplDE.jpl_init_ephemeris( ephemeris_filename: ephemeris_file, nam: nam, val: val)
     }
     
