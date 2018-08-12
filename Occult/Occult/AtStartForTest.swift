@@ -15,10 +15,7 @@ class AtStartForTest {
 
     init () {
         var jplDEEff = JPLDE()
-        var nam: [ String ] = Array( repeating: "" , count: 10 )
-        var val: [ Double ]  = Array( repeating: 0.0 , count: 10 )
-        
-        
+
         let fm = FileManager.default
         let documentsURL = fm.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let path = Bundle.main.resourcePath!
@@ -35,7 +32,11 @@ class AtStartForTest {
         }
        
         var ephemeris_file = Bundle.main.resourcePath! + "/unxp2000.405"
-        
+        jplDEEff.Init(FilePath: ephemeris_file )
+        let aud = jplDEEff.GetAU()
+        let ver = jplDEEff.DEVersion()
+        print( "AU:\t\(aud)\n" );
+        print( "DE:\t\(ver)\n")
        
         //jplDE.jpl_init_ephemeris( ephemeris_filename: ephemeris_file, nam: nam, val: val)
     }
