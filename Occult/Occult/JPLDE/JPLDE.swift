@@ -50,12 +50,19 @@ class APSJPLERR {
 
 let JPL_MAX_CONST_NUM = 400
 let JPL_CONST_LENGTH  = 6
+let EQU2ECL           = 23.43929111
 
 class JPLDE {
     var ephem : UnsafeMutableRawPointer!
     var Constants = [ String : Double ]()
     
     init() {
+        Init()
+    }
+    
+    func Init() {
+        var ephemeris_file = Bundle.main.resourcePath! + "/unxp2000.405"
+        Init(FilePath: ephemeris_file )
     }
     
     //std::map <const std::string,double> constants;
@@ -89,7 +96,7 @@ class JPLDE {
                 Constants[ const_name ] = vals[i]
                 //print( "\(const_name)\t\(vals[i])\n" )
             }
-            print( Constants )
+            //print( Constants )
         }
         else {
             RetCode = aps_error.APS_JPL_INIT
@@ -104,6 +111,13 @@ class JPLDE {
     
     func GetAU()->Double {
         return GetConst(const: "AU")
+    }
+    
+    func GetGMB()->Double {
+        return GetConst(const: "GMB")
+    }
+    func GetGMS()->Double {
+        return GetConst(const: "GMS")
     }
     
     func GetPosVelEph( JD : Double, Target : PlanetType, Center :PlanetType, Pos : inout Vector, Vel : inout Vector)->aps_error {
@@ -134,6 +148,17 @@ class JPLDE {
     func SunEquPos( JD : Double)->Vector {
         let Pos = GetPosEph( JD: JD, Target: PlanetType.Earth, Center: PlanetType.Sun )
         
+        return Pos
+    }
+    
+    func SunPos( JD : Double)->Vector {
+        //Heliocentric Ecliptical Sun Pos
+        
+        let ABa = AstroBase()
+
+        
+        let Pos =  ABa.R_x(phi: EQU2ECL * ABa.Rad) * GetPosEph( JD: JD, Target: PlanetType.Earth, Center: PlanetType.Sun )
+        // r_sun = apsmathlib::R_x( apsastroalg::EQU2ECL * apsmathlib::Rad ) * r_sun;
         return Pos
     }
     

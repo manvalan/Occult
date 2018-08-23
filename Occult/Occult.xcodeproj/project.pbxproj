@@ -32,20 +32,32 @@
 		31D59A81211DD2AC0071D3CE /* VectorTrigonometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A72211DD2AC0071D3CE /* VectorTrigonometry.swift */; };
 		31D59A82211DD2AC0071D3CE /* MatrixAlgebra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A73211DD2AC0071D3CE /* MatrixAlgebra.swift */; };
 		31D59A8D211DD2CA0071D3CE /* MOSunPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A83211DD2C90071D3CE /* MOSunPosition.swift */; };
-		31D59A8E211DD2CA0071D3CE /* MOAsteroidElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A84211DD2C90071D3CE /* MOAsteroidElement.swift */; };
-		31D59A8F211DD2CA0071D3CE /* MOKepler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A85211DD2C90071D3CE /* MOKepler.swift */; };
+		31D59A8E211DD2CA0071D3CE /* AsteroidElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A84211DD2C90071D3CE /* AsteroidElement.swift */; };
+		31D59A8F211DD2CA0071D3CE /* Kepler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A85211DD2C90071D3CE /* Kepler.swift */; };
 		31D59A90211DD2CA0071D3CE /* MOVSOP87.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A86211DD2C90071D3CE /* MOVSOP87.swift */; };
 		31D59A91211DD2CA0071D3CE /* MOPerturbation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A87211DD2CA0071D3CE /* MOPerturbation.swift */; };
 		31D59A92211DD2CA0071D3CE /* MOStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A88211DD2CA0071D3CE /* MOStar.swift */; };
-		31D59A93211DD2CA0071D3CE /* MOHorizon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A89211DD2CA0071D3CE /* MOHorizon.swift */; };
+		31D59A93211DD2CA0071D3CE /* JPLHorizon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A89211DD2CA0071D3CE /* JPLHorizon.swift */; };
 		31D59A94211DD2CA0071D3CE /* MOData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A8A211DD2CA0071D3CE /* MOData.swift */; };
-		31D59A95211DD2CA0071D3CE /* MOAsteroid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A8B211DD2CA0071D3CE /* MOAsteroid.swift */; };
+		31D59A95211DD2CA0071D3CE /* Asteroid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A8B211DD2CA0071D3CE /* Asteroid.swift */; };
 		31D59A96211DD2CA0071D3CE /* prova.txt in Resources */ = {isa = PBXBuildFile; fileRef = 31D59A8C211DD2CA0071D3CE /* prova.txt */; };
 		31D59A98211DFB4C0071D3CE /* DefaultConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A97211DFB4C0071D3CE /* DefaultConfig.swift */; };
 		31D59A9A211DFC820071D3CE /* AtStartForTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A99211DFC820071D3CE /* AtStartForTest.swift */; };
 		31D59FF3211F14610071D3CE /* unxp2000.405 in Resources */ = {isa = PBXBuildFile; fileRef = 31D59FF2211F14600071D3CE /* unxp2000.405 */; };
 		31D5A00F211F46A80071D3CE /* jpl_eph.c in Sources */ = {isa = PBXBuildFile; fileRef = 31D5A00E211F46A80071D3CE /* jpl_eph.c */; };
 		31D5A06E211F50D80071D3CE /* JPLDE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D5A06D211F50D80071D3CE /* JPLDE.swift */; };
+		31D5A0862120B4A70071D3CE /* MPCAsteroid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D5A0852120B4A70071D3CE /* MPCAsteroid.swift */; };
+		31D5A08B2120CEA40071D3CE /* AsteroidIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D5A08A2120CEA40071D3CE /* AsteroidIO.swift */; };
+		31D5A08D2120DF670071D3CE /* MPCORBRead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D5A08C2120DF670071D3CE /* MPCORBRead.swift */; };
+		31D5A08F2120E7050071D3CE /* MPCOrb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D5A08E2120E7050071D3CE /* MPCOrb.swift */; };
+		31D5A09121218C830071D3CE /* mpcorb_extended.json in Resources */ = {isa = PBXBuildFile; fileRef = 31D5A09021218C820071D3CE /* mpcorb_extended.json */; };
+		31D5A093212214BF0071D3CE /* MPPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D5A092212214BF0071D3CE /* MPPosition.swift */; };
+		31D5A09E2122AB000071D3CE /* MPDEIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D5A09D2122AB000071D3CE /* MPDEIntegration.swift */; };
+		31D5A0A12122D6540071D3CE /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D5A0A02122D6540071D3CE /* NetworkExtension.framework */; };
+		31D5A0B7212330B40071D3CE /* AsteroidXYZPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D5A0B6212330B40071D3CE /* AsteroidXYZPosition.swift */; };
+		31D5A0E82123856C0071D3CE /* StateVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D5A0E72123856C0071D3CE /* StateVector.swift */; };
+		31D5A0EC2125AB970071D3CE /* CalcChebyshev.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D5A0EB2125AB970071D3CE /* CalcChebyshev.swift */; };
+		31D5A0EE2125ABD50071D3CE /* ChebyshevCoeff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D5A0ED2125ABD50071D3CE /* ChebyshevCoeff.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,14 +110,14 @@
 		31D59A72211DD2AC0071D3CE /* VectorTrigonometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorTrigonometry.swift; sourceTree = "<group>"; };
 		31D59A73211DD2AC0071D3CE /* MatrixAlgebra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixAlgebra.swift; sourceTree = "<group>"; };
 		31D59A83211DD2C90071D3CE /* MOSunPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOSunPosition.swift; sourceTree = "<group>"; };
-		31D59A84211DD2C90071D3CE /* MOAsteroidElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOAsteroidElement.swift; sourceTree = "<group>"; };
-		31D59A85211DD2C90071D3CE /* MOKepler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOKepler.swift; sourceTree = "<group>"; };
+		31D59A84211DD2C90071D3CE /* AsteroidElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsteroidElement.swift; sourceTree = "<group>"; };
+		31D59A85211DD2C90071D3CE /* Kepler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kepler.swift; sourceTree = "<group>"; };
 		31D59A86211DD2C90071D3CE /* MOVSOP87.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOVSOP87.swift; sourceTree = "<group>"; };
 		31D59A87211DD2CA0071D3CE /* MOPerturbation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOPerturbation.swift; sourceTree = "<group>"; };
 		31D59A88211DD2CA0071D3CE /* MOStar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOStar.swift; sourceTree = "<group>"; };
-		31D59A89211DD2CA0071D3CE /* MOHorizon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHorizon.swift; sourceTree = "<group>"; };
+		31D59A89211DD2CA0071D3CE /* JPLHorizon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPLHorizon.swift; sourceTree = "<group>"; };
 		31D59A8A211DD2CA0071D3CE /* MOData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOData.swift; sourceTree = "<group>"; };
-		31D59A8B211DD2CA0071D3CE /* MOAsteroid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOAsteroid.swift; sourceTree = "<group>"; };
+		31D59A8B211DD2CA0071D3CE /* Asteroid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asteroid.swift; sourceTree = "<group>"; };
 		31D59A8C211DD2CA0071D3CE /* prova.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = prova.txt; sourceTree = "<group>"; };
 		31D59A97211DFB4C0071D3CE /* DefaultConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultConfig.swift; sourceTree = "<group>"; };
 		31D59A99211DFC820071D3CE /* AtStartForTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtStartForTest.swift; sourceTree = "<group>"; };
@@ -115,6 +127,19 @@
 		31D5A00E211F46A80071D3CE /* jpl_eph.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = jpl_eph.c; sourceTree = "<group>"; };
 		31D5A010211F47E80071D3CE /* jpl_int.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jpl_int.h; sourceTree = "<group>"; };
 		31D5A06D211F50D80071D3CE /* JPLDE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPLDE.swift; sourceTree = "<group>"; };
+		31D5A0852120B4A70071D3CE /* MPCAsteroid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPCAsteroid.swift; sourceTree = "<group>"; };
+		31D5A08A2120CEA40071D3CE /* AsteroidIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteroidIO.swift; sourceTree = "<group>"; };
+		31D5A08C2120DF670071D3CE /* MPCORBRead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPCORBRead.swift; sourceTree = "<group>"; };
+		31D5A08E2120E7050071D3CE /* MPCOrb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPCOrb.swift; sourceTree = "<group>"; };
+		31D5A09021218C820071D3CE /* mpcorb_extended.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mpcorb_extended.json; sourceTree = "<group>"; };
+		31D5A092212214BF0071D3CE /* MPPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPPosition.swift; sourceTree = "<group>"; };
+		31D5A09D2122AB000071D3CE /* MPDEIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPDEIntegration.swift; sourceTree = "<group>"; };
+		31D5A0A02122D6540071D3CE /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		31D5A0B5212327A10071D3CE /* test */ = {isa = PBXFileReference; lastKnownFileType = text; path = test; sourceTree = "<group>"; };
+		31D5A0B6212330B40071D3CE /* AsteroidXYZPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteroidXYZPosition.swift; sourceTree = "<group>"; };
+		31D5A0E72123856C0071D3CE /* StateVector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateVector.swift; sourceTree = "<group>"; };
+		31D5A0EB2125AB970071D3CE /* CalcChebyshev.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcChebyshev.swift; sourceTree = "<group>"; };
+		31D5A0ED2125ABD50071D3CE /* ChebyshevCoeff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChebyshevCoeff.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31D5A0A12122D6540071D3CE /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,11 +171,13 @@
 		31D59A1B211DC7050071D3CE = {
 			isa = PBXGroup;
 			children = (
+				31D5A0B5212327A10071D3CE /* test */,
 				31D59A26211DC7050071D3CE /* Occult */,
 				31D59A39211DC7070071D3CE /* OccultTests */,
 				31D59A44211DC7070071D3CE /* OccultUITests */,
 				31D59A25211DC7050071D3CE /* Products */,
 				31D59FF0211F14600071D3CE /* data */,
+				31D5A09F2122D6540071D3CE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,11 +194,9 @@
 		31D59A26211DC7050071D3CE /* Occult */ = {
 			isa = PBXGroup;
 			children = (
-				31D59A8B211DD2CA0071D3CE /* MOAsteroid.swift */,
-				31D59A84211DD2C90071D3CE /* MOAsteroidElement.swift */,
+				31D5A00C211F46A70071D3CE /* Occult-Bridging-Header.h */,
+				31D5A0872120CE770071D3CE /* Ateroid */,
 				31D59A8A211DD2CA0071D3CE /* MOData.swift */,
-				31D59A89211DD2CA0071D3CE /* MOHorizon.swift */,
-				31D59A85211DD2C90071D3CE /* MOKepler.swift */,
 				31D59A87211DD2CA0071D3CE /* MOPerturbation.swift */,
 				31D59A88211DD2CA0071D3CE /* MOStar.swift */,
 				31D59A83211DD2C90071D3CE /* MOSunPosition.swift */,
@@ -233,7 +259,6 @@
 				31D5A00D211F46A80071D3CE /* jpl_eph.h */,
 				31D5A010211F47E80071D3CE /* jpl_int.h */,
 				31D5A00E211F46A80071D3CE /* jpl_eph.c */,
-				31D5A00C211F46A70071D3CE /* Occult-Bridging-Header.h */,
 				31D5A06D211F50D80071D3CE /* JPLDE.swift */,
 			);
 			path = JPLDE;
@@ -264,6 +289,7 @@
 		31D59FF0211F14600071D3CE /* data */ = {
 			isa = PBXGroup;
 			children = (
+				31D5A09021218C820071D3CE /* mpcorb_extended.json */,
 				31D59FF1211F14600071D3CE /* JPLDE */,
 			);
 			path = data;
@@ -275,6 +301,43 @@
 				31D59FF2211F14600071D3CE /* unxp2000.405 */,
 			);
 			path = JPLDE;
+			sourceTree = "<group>";
+		};
+		31D5A0872120CE770071D3CE /* Ateroid */ = {
+			isa = PBXGroup;
+			children = (
+				31D5A0882120CE840071D3CE /* AteroidIO */,
+				31D5A092212214BF0071D3CE /* MPPosition.swift */,
+				31D59A89211DD2CA0071D3CE /* JPLHorizon.swift */,
+				31D59A84211DD2C90071D3CE /* AsteroidElement.swift */,
+				31D5A0B6212330B40071D3CE /* AsteroidXYZPosition.swift */,
+				31D5A09D2122AB000071D3CE /* MPDEIntegration.swift */,
+				31D59A8B211DD2CA0071D3CE /* Asteroid.swift */,
+				31D5A0E72123856C0071D3CE /* StateVector.swift */,
+				31D59A85211DD2C90071D3CE /* Kepler.swift */,
+				31D5A0EB2125AB970071D3CE /* CalcChebyshev.swift */,
+				31D5A0ED2125ABD50071D3CE /* ChebyshevCoeff.swift */,
+			);
+			path = Ateroid;
+			sourceTree = "<group>";
+		};
+		31D5A0882120CE840071D3CE /* AteroidIO */ = {
+			isa = PBXGroup;
+			children = (
+				31D5A08E2120E7050071D3CE /* MPCOrb.swift */,
+				31D5A08A2120CEA40071D3CE /* AsteroidIO.swift */,
+				31D5A08C2120DF670071D3CE /* MPCORBRead.swift */,
+				31D5A0852120B4A70071D3CE /* MPCAsteroid.swift */,
+			);
+			path = AteroidIO;
+			sourceTree = "<group>";
+		};
+		31D5A09F2122D6540071D3CE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				31D5A0A02122D6540071D3CE /* NetworkExtension.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,6 +413,9 @@
 							com.apple.ApplicationGroups.Mac = {
 								enabled = 1;
 							};
+							com.apple.NetworkExtensions = {
+								enabled = 1;
+							};
 							com.apple.Sandbox = {
 								enabled = 1;
 							};
@@ -395,6 +461,7 @@
 			files = (
 				31D59FF3211F14610071D3CE /* unxp2000.405 in Resources */,
 				31D59A2C211DC7060071D3CE /* Assets.xcassets in Resources */,
+				31D5A09121218C830071D3CE /* mpcorb_extended.json in Resources */,
 				31D59A2F211DC7060071D3CE /* Main.storyboard in Resources */,
 				31D59A96211DD2CA0071D3CE /* prova.txt in Resources */,
 			);
@@ -424,6 +491,7 @@
 				31D59A56211DD2830071D3CE /* StreamReader.swift in Sources */,
 				31D59A75211DD2AC0071D3CE /* VectorStatistics.swift in Sources */,
 				31D59A7B211DD2AC0071D3CE /* MatrixArithmetic.swift in Sources */,
+				31D5A08F2120E7050071D3CE /* MPCOrb.swift in Sources */,
 				31D59A80211DD2AC0071D3CE /* Numeric.swift in Sources */,
 				31D59A74211DD2AC0071D3CE /* Random.swift in Sources */,
 				31D59A7A211DD2AC0071D3CE /* MatrixExponent.swift in Sources */,
@@ -433,23 +501,32 @@
 				31D59A98211DFB4C0071D3CE /* DefaultConfig.swift in Sources */,
 				31D59A2A211DC7050071D3CE /* ViewController.swift in Sources */,
 				31D5A06E211F50D80071D3CE /* JPLDE.swift in Sources */,
-				31D59A8F211DD2CA0071D3CE /* MOKepler.swift in Sources */,
+				31D5A09E2122AB000071D3CE /* MPDEIntegration.swift in Sources */,
+				31D59A8F211DD2CA0071D3CE /* Kepler.swift in Sources */,
+				31D5A0E82123856C0071D3CE /* StateVector.swift in Sources */,
+				31D5A0B7212330B40071D3CE /* AsteroidXYZPosition.swift in Sources */,
 				31D59A90211DD2CA0071D3CE /* MOVSOP87.swift in Sources */,
+				31D5A0EE2125ABD50071D3CE /* ChebyshevCoeff.swift in Sources */,
 				31D59A76211DD2AC0071D3CE /* VectorArithmetic.swift in Sources */,
 				31D59A5A211DD2910071D3CE /* AstroBase.swift in Sources */,
 				31D59A79211DD2AC0071D3CE /* VectorExponent.swift in Sources */,
-				31D59A93211DD2CA0071D3CE /* MOHorizon.swift in Sources */,
+				31D59A93211DD2CA0071D3CE /* JPLHorizon.swift in Sources */,
 				31D59A9A211DFC820071D3CE /* AtStartForTest.swift in Sources */,
 				31D59A92211DD2CA0071D3CE /* MOStar.swift in Sources */,
+				31D5A093212214BF0071D3CE /* MPPosition.swift in Sources */,
+				31D5A08B2120CEA40071D3CE /* AsteroidIO.swift in Sources */,
+				31D5A0EC2125AB970071D3CE /* CalcChebyshev.swift in Sources */,
 				31D59A7F211DD2AC0071D3CE /* Matrix.swift in Sources */,
 				31D59A81211DD2AC0071D3CE /* VectorTrigonometry.swift in Sources */,
 				31D59A57211DD2830071D3CE /* StreamWriter.swift in Sources */,
-				31D59A8E211DD2CA0071D3CE /* MOAsteroidElement.swift in Sources */,
+				31D5A0862120B4A70071D3CE /* MPCAsteroid.swift in Sources */,
+				31D59A8E211DD2CA0071D3CE /* AsteroidElement.swift in Sources */,
+				31D5A08D2120DF670071D3CE /* MPCORBRead.swift in Sources */,
 				31D5A00F211F46A80071D3CE /* jpl_eph.c in Sources */,
 				31D59A77211DD2AC0071D3CE /* MatrixTrigonometry.swift in Sources */,
 				31D59A7D211DD2AC0071D3CE /* Vector.swift in Sources */,
 				31D59A28211DC7050071D3CE /* AppDelegate.swift in Sources */,
-				31D59A95211DD2CA0071D3CE /* MOAsteroid.swift in Sources */,
+				31D59A95211DD2CA0071D3CE /* Asteroid.swift in Sources */,
 				31D59A78211DD2AC0071D3CE /* MatrixStatistics.swift in Sources */,
 				31D59A94211DD2CA0071D3CE /* MOData.swift in Sources */,
 				31D59A7C211DD2AC0071D3CE /* Operators.swift in Sources */,
@@ -629,7 +706,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = GAM.Occult;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Occult/JPLDE/Occult-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Occult/Occult-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
@@ -651,7 +728,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = GAM.Occult;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Occult/JPLDE/Occult-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Occult/Occult-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;

@@ -91,3 +91,4 @@ public func >= (lhs: Vector, rhs: Vector) -> Bool {
 public func <= (lhs: Vector, rhs: Vector) -> Bool {
     return lhs <=~ rhs
 }
+

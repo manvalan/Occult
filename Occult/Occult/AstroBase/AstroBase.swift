@@ -61,6 +61,7 @@ class AstroBase {
         
         return RX
     }
+    
     func GaussVec( Omega: Double, i : Double, omega: Double)->Matrix {
         var PQM = Matrix( 3,3 )
         
@@ -74,11 +75,16 @@ class AstroBase {
     }
     
     func modulo( x: Double, y: Double )->Double {
-        return y * frac( x: (x / y ) )
+        return fmod( x, y )
+        //return y * frac( x: (x / y ) )
     }
     
     func T( jd: Double )-> Double {
         return ( jd - 2451545.0 ) / 36525.0
+    }
+    
+    func Norm( a :Vector )->Double {
+        return sqrt( a[0] * a[0] + a[1] * a[1] + a[2] * a[2])
     }
     
     func Equ2EclMatrix( T:Double ) ->Matrix {
@@ -87,12 +93,28 @@ class AstroBase {
         return R_x( phi: eps )
     }
     
+    func Epsilon( T :Double )->Double {
+        let eps = ( 23.43929111 - (46.8150 + ( 0.00059 - 0.001813 * T ) * T ) * T / 3600.0 ) / Rad
+        
+        return eps
+    }
+    
     func Ecl2EquMatrix( T:Double ) ->Matrix {
         let eps = ( 23.43929111 - (46.8150 + ( 0.00059 - 0.001813 * T ) * T ) * T / 3600.0 ) / Rad
         
         return transpose( R_x( phi: eps ) )
     }
     
+    func PreclMatrix_Ecl( T1 :Double, T2 :Double )->Matrix {
+        let dT = T2 - T1
+        
+        var Pi = 174.876383889 * Rad + (((3289.4789+0.60622 * T1)*T1) + ( ( -869.8089 - 0.50491 * T1 ) + 0.03536 * dT ) * dT ) / Arcs
+        var pi  = ( (47.0029 - ( 0.06603 - 0.000598 * T1 ) * T1 ) + (( -0.03302 + 0.000598 * T1) + 0.000060 * dT ) * dT ) * dT / Arcs
+        var p_a = ( ( 5029.0966 + ( 2.22226 - 0.000042 * T1 ) * T1 ) + (( 1.11113 - 0.000042 * T1 ) - 0.000006 * dT ) * dT ) * dT / Arcs
+        
+        return R_z( phi: -( Pi + p_a ) ) * R_x( phi: pi ) * R_z( phi: Pi )
+    }
+   
     func EquatorialToEcliptical( a: Vector , jd: Double ) -> Vector {
         var U = Equ2EclMatrix(T: T(jd: jd ))
         var Ecli = U * a
@@ -107,7 +129,86 @@ class AstroBase {
         return Equ
     }
     
-    func JulianDay( data: MOData ) ->Double {
+    func RectangularToEquatorial( a: Vector , t:Double) -> Vector {
+       /*
+         Converting from heliocentric ecliptic coordinates to geocentric celestial coordinates. Given the heliocentric positions of Earth [x₀,y₀,z₀] and of another planet in ecliptic coordinates [x,y,z] for the same moment of time, t, expressed as a Julian Date, we will find the geocentric position of the planet in celestial coordinates; i.e., we want the planet's right ascension and declination. dx = x − x₀ dy = y − y₀ dz = z − z₀
+         
+         We find the obliquity of Earth, ε, at time t. T = t − 2451545.0 ε = 23.4392911° − 3.562266e-7 T − 1.22848e-16 T² + 1.03353e-20 T³ This equation gives the obliquity in degrees.
+         dx' = dx
+         dy' = dy cos ε − dz sin ε
+         dz' = dy sin ε + dz cos ε
+         The distance between Earth and the planet,
+         dr, at time t is found from
+         dr = √{ (dx)² + (dy)² + (dz)² }
+         The planet's geocentric right ascension in decimal hours, α, at time t is found from
+         
+                        α = (12/π) Arctan( dy' , dx' )
+         The planet's geocentric declination in decimal degrees, δ, at time t is found from
+                        δ = (180/π) Arcsin( dz' / dr )
+         
+         Reference https://www.physicsforums.com/threads/position-and-velocity-in-heliocentric-ecliptic-coordinates.872682/
+ 
+            Vector Results = alfa, delta, 1
+         */
+        let Ti = T(jd: t )
+        let epsilon = Epsilon(T: Ti )
+        
+        let dx1 = a[0]
+        let dy1 = a[1] * cos( epsilon ) - a[2] * sin( epsilon )
+        let dz1 = a[1] * sin( epsilon ) + a[2] * cos( epsilon )
+        let dr = sqrt( a[0] * a[0] + a[1] * a[1] + a[2] * a[2] )
+        
+        let alfa  = (  12.0 / Double.pi ) * atan2( dy1 , dx1 )
+        let delta = ( 180.0 / Double.pi ) * asin( dz1 / dr )
+        
+        var eqpos :Vector = [ 0.0 , 0.0 ]
+        eqpos[0] = alfa
+        eqpos[1] = delta
+        
+        return eqpos
+    }
+    
+    func polar( m_r :Double, m_theta:Double, m_phi:Double ) -> Vector {
+        var res :Vector = [ 0.0 , 0.0 , 0.0 ]
+        
+        let cosEl = cos( m_theta )
+        res[0] = m_r * cos(m_phi ) * cosEl
+        res[1] = m_r * sin(m_phi ) * cosEl
+        res[2] = m_r * cos(m_theta ) * sin( m_theta )
+        
+        return res
+    }
+    func CalcPolarAngles( a :Vector )->Vector {
+        var res :Vector = [ 0.0 , 0.0 , 0.0 ]
+        let m_r :Double = 0.0
+        let rho_sqr : Double = a[0] * a[0] + a[1] * a[1]
+        res[2] = sqrt( rho_sqr + a[2] * a[2] ) // R
+        
+        if( ( a[0] == 0.0 ) && ( a[1] == 0 ) ) {
+            res[0] = 0.0 // phi
+        } else {
+            res[0] = atan2( a[ 1 ], a[ 0 ] )
+        }
+        
+        if( res[0] < 0 ) {
+            res[0] += 2.0 * Double.pi
+        }
+        
+        var rho :Double = sqrt( rho_sqr )
+        
+        if(( a[1] == 0.0 ) && ( rho == 0 )) {
+            res[1] = 0.0 // theta
+        } else {
+            res[1] = atan2( a[ 1 ], rho )
+        }
+        return res
+    }
+    
+    func JulianDay( data :MOData ) ->Double {
+        return 2400000.5 + MJulianDay(data: data)
+    }
+    
+    func MJulianDay( data: MOData ) ->Double {
         var Month = data.month
         var Year  = data.year
         var b = 0

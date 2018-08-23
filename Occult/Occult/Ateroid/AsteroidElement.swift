@@ -8,7 +8,8 @@
 
 import Foundation
 
-class MOAsteroidElement {
+class AsteroidElement {
+    let Rad :Double = Double.pi / 180.0
     var JDTB :Double = 0.0
     var EC :Double = 0.0
     var QR :Double = 0.0
@@ -95,13 +96,13 @@ class MOAsteroidElement {
         EC = (rowArray[2] as NSString).doubleValue
       
         QR = (rowArray[3] as NSString).doubleValue
-        IN = (rowArray[4] as NSString).doubleValue
-        OM = (rowArray[5] as NSString).doubleValue
-        W = (rowArray[6] as NSString).doubleValue
+        IN = (rowArray[4] as NSString).doubleValue * Rad
+        OM = (rowArray[5] as NSString).doubleValue * Rad
+        W = (rowArray[6] as NSString).doubleValue  * Rad
         Tp = (rowArray[7] as NSString).doubleValue
-        N = (rowArray[8] as NSString).doubleValue
-        MA = (rowArray[9] as NSString).doubleValue
-        TA = (rowArray[10] as NSString).doubleValue
+        N = (rowArray[8] as NSString).doubleValue  * Rad
+        MA = (rowArray[9] as NSString).doubleValue * Rad
+        TA = (rowArray[10] as NSString).doubleValue * Rad
         A = (rowArray[11] as NSString).doubleValue
         AD = (rowArray[12] as NSString).doubleValue
         PR = (rowArray[13] as NSString).doubleValue
@@ -111,5 +112,8 @@ class MOAsteroidElement {
         let jplElemString = String( format: "%lg, %lg, %lg, %lg, %lg, %lg, %lg, %lg, %lg, %lg, %lg, %lg, %lg,", JDTB, EC, QR, IN, OM, W, Tp, N, MA, TA, A, AD, PR)
         
         return jplElemString
+    }
+    func Print() {
+        print("\(JDTB) \(EC) \(QR) \(IN) \(OM) \(W) \(Tp) \(N) \(MA) \(TA) \(A) \(AD) \(PR)")
     }
 }
