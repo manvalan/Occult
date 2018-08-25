@@ -8,58 +8,65 @@
 
 import Foundation
 
+enum c_light:Double {
+    case ms  = 299792458.0
+    case kms = 299792.458
+    case kmh = 1079252848.8
+    case aud = 173.144632684657
+} 
+
 class AstroBase {
     let pi2  = Double.pi * 2.0
-    let Arcs = 3600.0 * 180.0 / Double.pi
+    let Arcs = Double.pi / ( 3600 * 180.0 ) //3600.0 * 180.0 / Double.pi
     let Rad  = Double.pi / 180.0
     let Deg  = 180.0 / Double.pi
     
     func R_x( phi: Double)->Matrix {
-        var RX = Matrix(3,3)
+        var R = Matrix(3,3)
         
-        RX[0,0] = 1
-        RX[0,1] = 0
-        RX[0,2] = 0
-        RX[1,0] = 0
-        RX[1,1] = cos( phi )
-        RX[1,2] = sin( phi )
-        RX[2,0] = 0
-        RX[2,1] = -sin( phi )
-        RX[2,2] = cos( phi )
+        R[0,0] = 1
+        R[0,1] = 0
+        R[0,2] = 0
+        R[1,0] = 0
+        R[1,1] = cos( phi )
+        R[1,2] = sin( phi )
+        R[2,0] = 0
+        R[2,1] = -sin( phi )
+        R[2,2] = cos( phi )
         
-        return RX
+        return R
     }
     
     func R_y( phi: Double)->Matrix {
-        var RX = Matrix(3,3)
+        var R = Matrix(3,3)
         
-        RX[0,0] = cos( phi )
-        RX[0,1] = 0
-        RX[0,2] = -sin( phi )
-        RX[1,0] = 0
-        RX[1,1] = 1
-        RX[1,2] = 0
-        RX[2,0] = sin( phi )
-        RX[2,1] = 0
-        RX[2,2] = cos( phi )
+        R[0,0] = cos( phi )
+        R[0,1] = 0
+        R[0,2] = -sin( phi )
+        R[1,0] = 0
+        R[1,1] = 1
+        R[1,2] = 0
+        R[2,0] = sin( phi )
+        R[2,1] = 0
+        R[2,2] = cos( phi )
         
-        return RX
+        return R
     }
     
     func R_z( phi: Double)->Matrix {
-        var RX = Matrix(3,3)
+        var R = Matrix(3,3)
         
-        RX[0,0] = cos( phi )
-        RX[0,1] = sin( phi )
-        RX[0,2] = 0
-        RX[1,0] = -sin( phi )
-        RX[1,1] = cos( phi )
-        RX[1,2] = 0
-        RX[2,0] = 0
-        RX[2,1] = 0
-        RX[2,2] = 1
+        R[0,0] = cos( phi )
+        R[0,1] = sin( phi )
+        R[0,2] = 0
+        R[1,0] = -sin( phi )
+        R[1,1] = cos( phi )
+        R[1,2] = 0
+        R[2,0] = 0
+        R[2,1] = 0
+        R[2,2] = 1
         
-        return RX
+        return R
     }
     
     func GaussVec( Omega: Double, i : Double, omega: Double)->Matrix {
@@ -88,19 +95,19 @@ class AstroBase {
     }
     
     func Equ2EclMatrix( T:Double ) ->Matrix {
-        let eps = ( 23.43929111 - (46.8150 + ( 0.00059 - 0.001813 * T ) * T ) * T / 3600.0 ) / Rad
-    
-        return R_x( phi: eps )
+        let eps = Epsilon(T: T )
+       
+        return R_x(phi: eps )
     }
     
     func Epsilon( T :Double )->Double {
-        let eps = ( 23.43929111 - (46.8150 + ( 0.00059 - 0.001813 * T ) * T ) * T / 3600.0 ) / Rad
+        let eps = ( 23.43929111 - (46.8150 + ( 0.00059 - 0.001813 * T ) * T ) * T / 3600.0 ) * Rad
         
         return eps
     }
     
     func Ecl2EquMatrix( T:Double ) ->Matrix {
-        let eps = ( 23.43929111 - (46.8150 + ( 0.00059 - 0.001813 * T ) * T ) * T / 3600.0 ) / Rad
+        let eps = Epsilon(T: T)
         
         return transpose( R_x( phi: eps ) )
     }
@@ -108,9 +115,9 @@ class AstroBase {
     func PreclMatrix_Ecl( T1 :Double, T2 :Double )->Matrix {
         let dT = T2 - T1
         
-        var Pi = 174.876383889 * Rad + (((3289.4789+0.60622 * T1)*T1) + ( ( -869.8089 - 0.50491 * T1 ) + 0.03536 * dT ) * dT ) / Arcs
-        var pi  = ( (47.0029 - ( 0.06603 - 0.000598 * T1 ) * T1 ) + (( -0.03302 + 0.000598 * T1) + 0.000060 * dT ) * dT ) * dT / Arcs
-        var p_a = ( ( 5029.0966 + ( 2.22226 - 0.000042 * T1 ) * T1 ) + (( 1.11113 - 0.000042 * T1 ) - 0.000006 * dT ) * dT ) * dT / Arcs
+        var Pi = 174.876383889 * Rad + (((3289.4789+0.60622 * T1)*T1) + ( ( -869.8089 - 0.50491 * T1 ) + 0.03536 * dT ) * dT ) * Arcs
+        var pi  = ( (47.0029 - ( 0.06603 - 0.000598 * T1 ) * T1 ) + (( -0.03302 + 0.000598 * T1) + 0.000060 * dT ) * dT ) * dT * Arcs
+        var p_a = ( ( 5029.0966 + ( 2.22226 - 0.000042 * T1 ) * T1 ) + (( 1.11113 - 0.000042 * T1 ) - 0.000006 * dT ) * dT ) * dT * Arcs
         
         return R_z( phi: -( Pi + p_a ) ) * R_x( phi: pi ) * R_z( phi: Pi )
     }
@@ -129,45 +136,16 @@ class AstroBase {
         return Equ
     }
     
-    func RectangularToEquatorial( a: Vector , t:Double) -> Vector {
-       /*
-         Converting from heliocentric ecliptic coordinates to geocentric celestial coordinates. Given the heliocentric positions of Earth [x₀,y₀,z₀] and of another planet in ecliptic coordinates [x,y,z] for the same moment of time, t, expressed as a Julian Date, we will find the geocentric position of the planet in celestial coordinates; i.e., we want the planet's right ascension and declination. dx = x − x₀ dy = y − y₀ dz = z − z₀
-         
-         We find the obliquity of Earth, ε, at time t. T = t − 2451545.0 ε = 23.4392911° − 3.562266e-7 T − 1.22848e-16 T² + 1.03353e-20 T³ This equation gives the obliquity in degrees.
-         dx' = dx
-         dy' = dy cos ε − dz sin ε
-         dz' = dy sin ε + dz cos ε
-         The distance between Earth and the planet,
-         dr, at time t is found from
-         dr = √{ (dx)² + (dy)² + (dz)² }
-         The planet's geocentric right ascension in decimal hours, α, at time t is found from
-         
-                        α = (12/π) Arctan( dy' , dx' )
-         The planet's geocentric declination in decimal degrees, δ, at time t is found from
-                        δ = (180/π) Arcsin( dz' / dr )
-         
-         Reference https://www.physicsforums.com/threads/position-and-velocity-in-heliocentric-ecliptic-coordinates.872682/
- 
-            Vector Results = alfa, delta, 1
-         */
-        let Ti = T(jd: t )
-        let epsilon = Epsilon(T: Ti )
+    func BarycentricDyanamicalTime( jd :Double )->Double {
+        var tbd = 0.0
+        var g   = 0.0
         
-        let dx1 = a[0]
-        let dy1 = a[1] * cos( epsilon ) - a[2] * sin( epsilon )
-        let dz1 = a[1] * sin( epsilon ) + a[2] * cos( epsilon )
-        let dr = sqrt( a[0] * a[0] + a[1] * a[1] + a[2] * a[2] )
-        
-        let alfa  = (  12.0 / Double.pi ) * atan2( dy1 , dx1 )
-        let delta = ( 180.0 / Double.pi ) * asin( dz1 / dr )
-        
-        var eqpos :Vector = [ 0.0 , 0.0 ]
-        eqpos[0] = alfa
-        eqpos[1] = delta
-        
-        return eqpos
+        g = Rad * ( 357.53 + 0.9856003 * ( jd - 2451545.0 ))
+        let tat = jd + (32.184 / 86400.0)
+        tbd = tat + (0.001658 * sin( g ) + 0.000014 * sin( 2 * g ))/86400.0
+        return tbd
     }
-    
+   
     func polar( m_r :Double, m_theta:Double, m_phi:Double ) -> Vector {
         var res :Vector = [ 0.0 , 0.0 , 0.0 ]
         
@@ -178,6 +156,41 @@ class AstroBase {
         
         return res
     }
+    
+    func PrecMatrix( t1: Double , t2:Double)->Matrix {
+        let dT = t2 - t1
+        let Pi = Rad * 174.876383889 + ( (( 3289.4789+0.60622 * t1 ) * t1 ) + ((-869.8089 - 0.50491 * t1) + 0.03536 * dT ) * dT ) * Arcs
+        let pi = ((47.0029 - (0.06603 - 0.000598 * t1 ) * t1 ) + (( -0.03302 + 0.000598 * t1 ) + 0.000060 * dT ) * dT ) * dT * Arcs
+        let p_a = ( ( 5029.0966 + ( 2.22226 - 0.000042 * t1 ) * t1 ) + ((1.11113-0.000042 * t1 ) - 0.000006 * dT ) * dT ) * dT * Arcs
+        
+        return R_z(phi: -(Pi + p_a) ) * R_x(phi: pi) * R_z(phi: Pi)
+    }
+    
+    func NutMatrix( T :Double )->Matrix {
+        let pi2 = 2.0 * Double.pi
+        let ls  = pi2 * frac(x: 0.993133 +   99.997306 * T )
+        let D   = pi2 * frac(x: 0.827362 + 1236.853087 * T )
+        let F   = pi2 * frac(x: 0.259089 + 1342.227826 * T )
+        let N   = pi2 * frac(x: 0.347346 +    5.372447 * T )
+        
+        let dpsi = ( -17.200 * sin(N) - 1.319 * sin( 2 * (F - D + N)) - 0.227 * sin(2 * (F + N)) + 0.206 * sin(2 * N ) + 0.143 * sin(ls)) * Arcs
+        
+        let deps = ( 9.203 * cos(N) + 0.574 * cos( 2 * (F - D + N)) + 0.098 * cos(2 * (F + N)) - 0.090 * cos(2 * N ) ) * Arcs
+        
+        let eps = 0.4098928 - 2.2696E-4 * T
+        
+        let NM = R_x(phi: -eps - deps) * R_z(phi: -dpsi) * R_x(phi: eps )
+        
+        return NM
+    }
+    
+    func AberrationFactor( jplDE :JPLDE, t :Double, p_corp :Vector, v_corp :Vector ) -> Vector {
+        let v_Earth = jplDE.EarthVel(t: t)
+        let dist = Norm(a: p_corp )
+        let fac  = dist / c_light.aud.rawValue
+        return fac .* ( v_corp - v_Earth )
+    }
+    
     func CalcPolarAngles( a :Vector )->Vector {
         var res :Vector = [ 0.0 , 0.0 , 0.0 ]
         let m_r :Double = 0.0

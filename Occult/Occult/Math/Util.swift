@@ -10,7 +10,7 @@ import Accelerate
 
 // MARK: - Vector operations
 
-typealias Scalar = Double
+//typealias Scalar = Double
 
 typealias VectorVectorOperation = ((_: UnsafePointer<Double>, _: vDSP_Stride, _: UnsafePointer<Double>, _: vDSP_Stride, _: UnsafeMutablePointer<Double>, _: vDSP_Stride, _: vDSP_Length) -> ())
 

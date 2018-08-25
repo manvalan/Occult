@@ -175,6 +175,52 @@ class JPLDE {
         return Pos
     }
     
+    func EarthVel( t :Double )->Vector {
+        var a = Vector([ 0.0 , 0.0 , 0.0 ])
+        var b = Vector([ 0.0 , 0.0 , 0.0 ])
+        
+        GetPosVelEph(JD: t, Target: PlanetType.Earth, Center: PlanetType.Sun, Pos: &a, Vel: &b)
+        
+        return b
+    }
+    
+    func EarthBaryEclVel( t :Double )->Vector {
+        var a = Vector([ 0.0 , 0.0 , 0.0 ])
+        var b = Vector([ 0.0 , 0.0 , 0.0 ])
+        
+        GetPosVelEph(JD: t, Target: PlanetType.Earth, Center: PlanetType.Barycenter, Pos: &a, Vel: &b)
+        let ABa = AstroBase()
+        let E2E = ABa.Equ2EclMatrix(T: ABa.T(jd: t))
+        let c   = E2E * b
+        
+        return c
+    }
+    
+    func EarthBaryEclPos( t :Double ) -> Vector {
+        let pos = EarthBaryEquPos(JD: t)
+        let ABa = AstroBase()
+        let E2E = ABa.Equ2EclMatrix(T: ABa.T(jd: t))
+        let c   = E2E * pos
+        
+        return c
+    }
+    
+    func SunBaryEquPos( JD : Double)->Vector {
+        let Pos = GetPosEph( JD: JD, Target: PlanetType.Sun, Center: PlanetType.Barycenter )
+        
+        return Pos
+    }
+    
+    func SunBaryEclPos( t :Double ) -> Vector {
+        let pos = SunBaryEquPos(JD: t)
+        let ABa = AstroBase()
+        let E2E = ABa.Equ2EclMatrix(T: ABa.T(jd: t))
+        let c   = E2E * pos
+        
+        return c
+        
+    }
+    
     func DEVersion() -> String {
         let denum = GetConst(const: "DENUM")
         return String( denum )

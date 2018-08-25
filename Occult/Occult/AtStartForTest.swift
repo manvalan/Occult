@@ -7,7 +7,8 @@
 //
 
 import Foundation
-let Equinox = 2451545.0
+let Equinox2000 = 2451545.0
+
 class AtStartForTest{
 
     let defConfig :DefaultConfig = DefaultConfig()
@@ -84,48 +85,22 @@ class AtStartForTest{
         let endData   = 2458356.5
         let aBase = AstroBase()
         let elektra = Asteroid(name: "130")
-        elektra.KeplerianElements(from: startData, to: endData, step: 24 )
-        //elektra.StateVect(from: startData, to: endData)
+        elektra.KeplerianElements(from: startData, to: endData, step: 1 )
         
-        
-        //var elektra_state = elektra.State
-        
-        let jd = 2458348.5
-        
+        let jd = 2458349.166666667
         var elektra_Pos : Vector = [0.0 , 0.0, 0.0 ]
         var elektra_Vel : Vector = [0.0 , 0.0, 0.0 ]
+        var elektra_eq = elektra.EquatorialPosition(jplDE: jplDEEff, t: jd , t0: Equinox2000 )
+        var elektra_eq_app = elektra.EquatorialApparentPosition(jplDE: jplDEEff, t: jd )
+        print( "Electra Eq:          RA:\(elektra_eq.raString())  DEC: \(elektra_eq.decString())")
+        print( "Electra Apparent Eq: RA:\(elektra_eq_app.raString())  DEC: \(elektra_eq_app.decString())")
+      
+         // 16   27.   59.33    +00.  58 07.0
+        let ara :HourAngle   = HourAngle(hour: 16, minute: 27, second: 59.33)
+        let adec:DegreeAngle = DegreeAngle(degree: 0, minute: 58, second: 7.0)
+        let true_pos = EquatorialCoordinate(rightAscension: ara, declination: adec, distance: 0)
         
-        //elektra.HeliocentricEclipticalPositionState(jd: jd, pos: &elektra_Pos, vel: &elektra_Vel)
-        
-        elektra.HeliocentricEclipticalPositionElement(jd: jd, pos: &elektra_Pos, vel: &elektra_Vel)
-        let R_Sun = jplDEEff.SunPos(JD: jd )
-        print("130 - Elektra")
-        print("\tHeliocentric Ecliptical Position: \(elektra_Pos)")
-        print("\tHeliocentric Ecliptical Velocity: \(elektra_Vel)")
-        var R_Elektra = elektra_Pos + R_Sun
-        let dist = aBase.Norm(a: R_Elektra)
-        let fac = 0.00578 * dist
-        R_Elektra = R_Elektra + fac .* elektra_Vel
-        print("\tGeocentric Ecliptical Velocity  : \(R_Elektra)")
-        
-//        //let R_Elektra = elektra_Pos + R_Sun
-//        let dist = aBase.Norm(a: R_Elektra)
-//        let fac = 0.00578 * dist
-//        print( elektra_Pos )
-//        //print( elektra_Vel )
-//        print( R_Sun )
-//        print( R_Elektra )
-//        var ElektraEQ = aBase.Ecl2EquMatrix(T: aBase.T(jd: Equinox )) * R_Elektra
-//        var ElektraEQP = aBase.CalcPolarAngles(a: ElektraEQ)
-//        print( "Equatorial XYZ: \(ElektraEQ)" )
-//        print( "Equatorial    : \(ElektraEQP)" )
-//        //ElektraEQP = ElektraEQP .* aBase.Deg
-//        print( ElektraEQP )
-//
-//        //        var a: Matrix = Matrix( [ [1,0,0],[0,1,0],[0,0,1]] )
-////        var b: Vector = [ 2, 2, 2]
-////        let ab = a * b
-////        let ab2 = a .* b
-   }
-    
+        let sep = true_pos.angularSeparation( from: elektra_eq_app )
+        print( "Angular distance: \(sep)" )
+    }
 }
