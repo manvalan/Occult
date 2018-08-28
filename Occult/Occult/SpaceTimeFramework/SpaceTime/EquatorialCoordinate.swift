@@ -131,13 +131,18 @@ public extension EquatorialCoordinate {
     }
     
     public func raString()->String {
-        var rastr = String( "\(Int(rightAscension.hourComponent))h \(Int(rightAscension.minuteComponent))m \(Int(rightAscension.secondComponent))s" )
+        var ip :Double = 0
+        let cent = 100.0 * modf( rightAscension.secondComponent, &ip )
+        let rastr = String( format: "%-2.2ih %-2.2im %-2.2is.%2.2i" , Int(rightAscension.hourComponent), Int(rightAscension.minuteComponent), Int(rightAscension.secondComponent), Int( cent ) )
         
         return rastr
     }
     
     public func decString()->String {
-        var decstr = String( "\(Int(declination.degreeComponent))° \(Int(declination.minuteComponent))\' \(Int(declination.secondComponent))\"" )
+        var ip :Double = 0
+        let cent = 10.0 * modf( declination.secondComponent, &ip )
+        
+        var decstr = String( format: "%+2.2i° %-2.2i' %-2.2i\".%1.1i" , Int(declination.degreeComponent) , Int(declination.minuteComponent) ,Int(declination.secondComponent), cent )
         
         return decstr
     }

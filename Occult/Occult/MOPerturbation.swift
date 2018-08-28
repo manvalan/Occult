@@ -29,7 +29,7 @@ class MOPerturbation{
     init( T: Double, M: Double, I_min :Int, I_max : Int,
         m: Double, i_min: Int, i_max: Int, phi: Double ){
         
-        var i: Int
+       
         m_dl = 0
         m_db = 0
         m_dr = 0

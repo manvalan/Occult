@@ -207,43 +207,7 @@ class ChebyshevCoeff {
     func GetValue( x:Int )->Vector {
         return astpos[x].pos
     }
-    
-    func fX( x : CDouble )->CDouble {
-        return findIndexInPosX(j: 0)
-    }
-    
-    func fY( x : CDouble )->CDouble {
-        return findIndexInPosX(j: 1)
-    }
-    
-    func fZ( x : CDouble )->CDouble {
-        return findIndexInPosX(j: 2)
-    }
-    
-    func CalcChebyshevCoeff( n: Int, start :Double, end :Double, Positions: [AsteroidXYZPosition] ) {
-        order     = n
-        startEpoc = start
-        endEpoc   = end
-        cX = [Double]( repeating: 0.0, count: order)
-        cY = [Double]( repeating: 0.0, count: order)
-        cZ = [Double]( repeating: 0.0, count: order)
-        
-        astpos = Positions
-        
-        startEpoc = Positions[0].t
-        endEpoc = Positions[Positions.count-1].t
-        
-        let a  :Double = -1.0
-        let b  :Double = +1.0
-        
-        posInd = 0
-        cX = chebyshev_coefficients2(a: a, b: b, n: order, f:fX )
-        posInd = 0
-        cY = chebyshev_coefficients2(a: a, b: b, n: order, f:fY )
-        posInd = 0
-        cZ = chebyshev_coefficients2(a: a, b: b, n: order, f:fZ )
-    }
-    
+
     func CalcChebyshevCoeff2( n: Int, start :Double, end :Double, Positions: [AsteroidXYZPosition] ) {
        
         order     = n
@@ -265,5 +229,44 @@ class ChebyshevCoeff {
     func GetPosNew( t : Double ) -> Vector {
         let pos = ChebyshevValue(t: t)
         return pos
+    }
+    
+    func test(  ) {
+        let n = 24
+        let len = 24
+        
+        let jdStart = 2458349.5
+        let jdEnd   = 2458350.5
+        var Positions: [AsteroidXYZPosition] =  [AsteroidXYZPosition]()
+        
+        let startEpoc : MOData = MOData( jd: jdStart)
+        let endEpoc   : MOData = MOData( jd: jdEnd  )
+        var t         : Double = jdStart
+        
+        let dStepH = 0
+        let dStepM = 60
+        
+        let stp : MOData = MOData( hh: dStepH, mn: dStepM )
+        
+        // JPL Horizons batch
+        let hor = JPLHorizon(BodyName: "267")
+        hor.PositionsVector(StartEphem: startEpoc, EndEphem: endEpoc, StepTime: stp )
+        // waiting...
+        hor.WaitResults()
+        
+        // get X,Y,Z pos
+        let pos  :[AsteroidXYZPosition] = hor.GetPosVec()
+        print( pos.count )
+        
+        let coeff = [ChebyshevCoeff]( repeating: ChebyshevCoeff(), count: len+1 )
+        CalcChebyshevCoeff2(n: n, start: jdStart, end: jdEnd, Positions: pos )
+        print( "Test Results")
+        print( "x(t)               y(t) [real]            y(t)  [Calculated]")
+        for j in 0...pos.count-1 {
+            t = pos[j].t
+            let to = ChebyshevValue(t: t )
+            print( "\(j)   \(t)   \(pos[j].pos[0]) \(to[0])")
+        }
+        
     }
 }

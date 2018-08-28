@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3104DDD4212F0F6E0060A003 /* KeplerianElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3104DDD3212F0F6E0060A003 /* KeplerianElements.swift */; };
+		3104DDD4212F0F6E0060A003 /* KepElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3104DDD3212F0F6E0060A003 /* KepElements.swift */; };
 		3104DDD7212F0FD80060A003 /* kepcart.c in Sources */ = {isa = PBXBuildFile; fileRef = 3104DDD6212F0FD80060A003 /* kepcart.c */; };
 		31779E59212F5BDB005752BC /* Spherical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31779E58212F5BDB005752BC /* Spherical.swift */; };
 		31779E79212FDFA5005752BC /* CLLocation+Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31779E5C212FDFA5005752BC /* CLLocation+Transform.swift */; };
@@ -35,6 +35,9 @@
 		31779E92212FDFA5005752BC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31779E78212FDFA5005752BC /* Info.plist */; };
 		31779E9E21320EBB005752BC /* Chebyshev.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31779E9D21320EBB005752BC /* Chebyshev.swift */; };
 		31779EA021320ECB005752BC /* ChebyshevCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31779E9F21320ECB005752BC /* ChebyshevCalc.swift */; };
+		31779EA32132FB1C005752BC /* chebyshev.c in Sources */ = {isa = PBXBuildFile; fileRef = 31779EA22132FB1C005752BC /* chebyshev.c */; };
+		31779EA52133F464005752BC /* Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31779EA42133F464005752BC /* Elements.swift */; };
+		31779EA721342EB5005752BC /* Coeff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31779EA621342EB5005752BC /* Coeff.swift */; };
 		31D59A28211DC7050071D3CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A27211DC7050071D3CE /* AppDelegate.swift */; };
 		31D59A2A211DC7050071D3CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A29211DC7050071D3CE /* ViewController.swift */; };
 		31D59A2C211DC7060071D3CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31D59A2B211DC7060071D3CE /* Assets.xcassets */; };
@@ -102,7 +105,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3104DDD3212F0F6E0060A003 /* KeplerianElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeplerianElements.swift; sourceTree = "<group>"; };
+		3104DDD3212F0F6E0060A003 /* KepElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KepElements.swift; sourceTree = "<group>"; };
 		3104DDD5212F0FD80060A003 /* kepcart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kepcart.h; sourceTree = "<group>"; };
 		3104DDD6212F0FD80060A003 /* kepcart.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = kepcart.c; sourceTree = "<group>"; };
 		31779E58212F5BDB005752BC /* Spherical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spherical.swift; sourceTree = "<group>"; };
@@ -132,6 +135,10 @@
 		31779E78212FDFA5005752BC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31779E9D21320EBB005752BC /* Chebyshev.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chebyshev.swift; sourceTree = "<group>"; };
 		31779E9F21320ECB005752BC /* ChebyshevCalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChebyshevCalc.swift; sourceTree = "<group>"; };
+		31779EA12132FB1C005752BC /* chebyshev.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chebyshev.h; sourceTree = "<group>"; };
+		31779EA22132FB1C005752BC /* chebyshev.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = chebyshev.c; sourceTree = "<group>"; };
+		31779EA42133F464005752BC /* Elements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Elements.swift; sourceTree = "<group>"; };
+		31779EA621342EB5005752BC /* Coeff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coeff.swift; sourceTree = "<group>"; };
 		31D59A24211DC7050071D3CE /* Occult.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Occult.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31D59A27211DC7050071D3CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31D59A29211DC7050071D3CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -268,6 +275,8 @@
 		31779E9C21320E8C005752BC /* Chebyshev */ = {
 			isa = PBXGroup;
 			children = (
+				31779EA22132FB1C005752BC /* chebyshev.c */,
+				31779EA12132FB1C005752BC /* chebyshev.h */,
 				31779E9D21320EBB005752BC /* Chebyshev.swift */,
 				31779E9F21320ECB005752BC /* ChebyshevCalc.swift */,
 			);
@@ -417,9 +426,11 @@
 			children = (
 				31D5A0882120CE840071D3CE /* AteroidIO */,
 				31D59A89211DD2CA0071D3CE /* JPLHorizon.swift */,
+				31779EA42133F464005752BC /* Elements.swift */,
+				31779EA621342EB5005752BC /* Coeff.swift */,
 				3104DDD6212F0FD80060A003 /* kepcart.c */,
 				3104DDD5212F0FD80060A003 /* kepcart.h */,
-				3104DDD3212F0F6E0060A003 /* KeplerianElements.swift */,
+				3104DDD3212F0F6E0060A003 /* KepElements.swift */,
 				31D59A84211DD2C90071D3CE /* AsteroidElement.swift */,
 				31D5A0B6212330B40071D3CE /* AsteroidXYZPosition.swift */,
 				31D59A8B211DD2CA0071D3CE /* Asteroid.swift */,
@@ -599,6 +610,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31D59A56211DD2830071D3CE /* StreamReader.swift in Sources */,
+				31779EA721342EB5005752BC /* Coeff.swift in Sources */,
 				31779E7D212FDFA5005752BC /* HorizontalCoordinate.swift in Sources */,
 				31D59A75211DD2AC0071D3CE /* VectorStatistics.swift in Sources */,
 				31D59A7B211DD2AC0071D3CE /* MatrixArithmetic.swift in Sources */,
@@ -612,7 +624,7 @@
 				31779E9E21320EBB005752BC /* Chebyshev.swift in Sources */,
 				31779E7E212FDFA5005752BC /* LocationAndTime.swift in Sources */,
 				31D59A91211DD2CA0071D3CE /* MOPerturbation.swift in Sources */,
-				3104DDD4212F0F6E0060A003 /* KeplerianElements.swift in Sources */,
+				3104DDD4212F0F6E0060A003 /* KepElements.swift in Sources */,
 				31779E87212FDFA5005752BC /* Easing.swift in Sources */,
 				31D59A98211DFB4C0071D3CE /* DefaultConfig.swift in Sources */,
 				31779E8D212FDFA5005752BC /* VectorMath.swift in Sources */,
@@ -639,9 +651,11 @@
 				31779E8E212FDFA5005752BC /* HourAngle.swift in Sources */,
 				31D5A08B2120CEA40071D3CE /* AsteroidIO.swift in Sources */,
 				31D59A7F211DD2AC0071D3CE /* Matrix.swift in Sources */,
+				31779EA32132FB1C005752BC /* chebyshev.c in Sources */,
 				31D59A81211DD2AC0071D3CE /* VectorTrigonometry.swift in Sources */,
 				31D59A57211DD2830071D3CE /* StreamWriter.swift in Sources */,
 				31D5A0862120B4A70071D3CE /* MPCAsteroid.swift in Sources */,
+				31779EA52133F464005752BC /* Elements.swift in Sources */,
 				31779E79212FDFA5005752BC /* CLLocation+Transform.swift in Sources */,
 				31D59A8E211DD2CA0071D3CE /* AsteroidElement.swift in Sources */,
 				31D5A08D2120DF670071D3CE /* MPCORBRead.swift in Sources */,

@@ -68,6 +68,8 @@ class AtStartForTest{
         //MPCOrbTest.MPCOrbParseJSONFile(urlFile: urlPath! )
         //print( "Number of Asteroid in Database: \(MPCOrbTest.database.count)" )
         //MPCOrbTest.database
+        
+        
         print( "EMRAT:\t\(jplDEEff.GetConst(const: "EMRAT"))" )
         print( "GMS:\t\(jplDEEff.GetConst(const: "GMS"))" )
         print( "GMB:\t\(jplDEEff.GetConst(const: "GMB"))" )
@@ -80,7 +82,11 @@ class AtStartForTest{
         print( "GM8:\t\(jplDEEff.GetConst(const: "GM8"))" )
         print( "GM9:\t\(jplDEEff.GetConst(const: "GM9"))" )
         
-        
+        let ara :HourAngle   = HourAngle(hour: 16, minute: 27, second: 59.33)
+        let adec:DegreeAngle = DegreeAngle(degree: 0, minute: 58, second: 7.0)
+        let true_pos = EquatorialCoordinate(rightAscension: ara, declination: adec, distance: 0)
+        print( "Electra Apparent True: RA:\(true_pos.raString())  DEC: \(true_pos.decString())")
+ 
         let startData = 2458346.5
         let endData   = 2458356.5
         let aBase = AstroBase()
@@ -92,15 +98,17 @@ class AtStartForTest{
         var elektra_Vel : Vector = [0.0 , 0.0, 0.0 ]
         var elektra_eq = elektra.EquatorialPosition(jplDE: jplDEEff, t: jd , t0: Equinox2000 )
         var elektra_eq_app = elektra.EquatorialApparentPosition(jplDE: jplDEEff, t: jd )
-        print( "Electra Eq:          RA:\(elektra_eq.raString())  DEC: \(elektra_eq.decString())")
-        print( "Electra Apparent Eq: RA:\(elektra_eq_app.raString())  DEC: \(elektra_eq_app.decString())")
-      
-         // 16   27.   59.33    +00.  58 07.0
-        let ara :HourAngle   = HourAngle(hour: 16, minute: 27, second: 59.33)
-        let adec:DegreeAngle = DegreeAngle(degree: 0, minute: 58, second: 7.0)
-        let true_pos = EquatorialCoordinate(rightAscension: ara, declination: adec, distance: 0)
+        print( "Electra Apparent Eq:   RA:\(elektra_eq_app.raString())  DEC: \(elektra_eq_app.decString())")
+        let sep  = true_pos.angularSeparation( from: elektra_eq_app )
+        print( "Angular Separation:  \(sep)" )
+        /***** NEW INTERFACE *****/
+        let ele2 = Asteroid(name: "130")
+        ele2.NewKeplerianElements(from: startData, to: endData )
+        let ele2_app = ele2.EquatorialApparentPositionNew(jplDE: jplDEEff, t: jd )
+        print( "Electra Apparent Eq:   RA:\(ele2_app.raString())  DEC: \(ele2_app.decString())")
+        let sep2 = true_pos.angularSeparation( from: ele2_app )
+        print( "Angular Separation:  \(sep2)" )
         
-        let sep = true_pos.angularSeparation( from: elektra_eq_app )
-        print( "Angular distance: \(sep)" )
+ 
     }
 }

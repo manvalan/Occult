@@ -247,10 +247,13 @@ class JPLHorizon {
     func KeplerianElements(  Start :Double, End : Double , Step : Double) {
         let StartEphem = MOData(jd: Start )
         let EndEphem   = MOData(jd: End )
-        let StepTime   = MOData(hh: Int(Step), mn: 0)
         
-        print( StartEphem.toString() )
-        print( EndEphem.toString()   )
+        let hs = floor( Step )
+        let mi = 60.0 * ( Step - floor( Step) )
+        let StepTime   = MOData(hh: Int(hs), mn: Int( mi ) )
+        
+        //print( StartEphem.toString() )
+        //print( EndEphem.toString()   )
         JPLHorizonsBatchRequest(StartEphem: StartEphem, EndEphem: EndEphem, StepTime: StepTime, type: ElementsType.Elements)
         
         return
@@ -333,6 +336,20 @@ class JPLHorizon {
             return AstElm
         } else {
             return [AsteroidElement]()
+        }
+    }
+    
+    func GetKeplerianElements() -> [KepElements] {
+        var ke :[KepElements] = [KepElements]( repeating: KepElements(), count: AstElm.count )
+        
+        for i in 0...AstElm.count-1 {
+            ke[i] = KepElements( aElem: AstElm[i] )
+        }
+        
+        if( bElem == true) {
+            return ke
+        } else {
+            return [KepElements]()
         }
     }
     

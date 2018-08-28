@@ -9,13 +9,22 @@
 import Foundation
 
 class KepElements {
+    
+    /*
+     element.a = a_calc.getval(val: t )
+     element.e = e_calc.getval(val: t )
+     element.i = i_calc.getval(val: t )
+     element.m = m_calc.getval(val: t )
+     element.Ω = Ω_calc.getval(val: t )
+     element.ω = ω_calc.getval(val: t )
+ */
     var jd0         : Double = 0.0      // epoc of elements [day]
     var a           : Double = 0.0      // Semi axis major of orbit [AU]
     var e           : Double = 0.0      // eccentricity [1]
     var i           : Double = 0.0      // inclination of orbit [rad]
-    var longNode    : Double = 0.0      // Longitude ascendenting node [rad]
-    var argPeri     : Double = 0.0      // Argument of perihelion [rad]
-    var meanAnom    : Double = 0.0      // mean Anomaly [rad]
+    var Ω           : Double = 0.0      // Longitude ascendenting node [rad]
+    var ω           : Double = 0.0      // Argument of perihelion [rad]
+    var m           : Double = 0.0      // mean Anomaly [rad]
     let GM          : Double = 0.01720209895
     
     init() {
@@ -27,9 +36,9 @@ class KepElements {
         a = aElem.A
         e = aElem.EC
         i = aElem.IN
-        longNode = aElem.OM
-        argPeri  = aElem.W
-        meanAnom = aElem.MA
+        Ω = aElem.OM
+        ω = aElem.W
+        m = aElem.MA
     }
     
     init( JDTB :Double, A :Double, EC :Double, IN:Double, OM :Double, W:Double, MA:Double ) {
@@ -38,9 +47,10 @@ class KepElements {
         a        = A
         e        = EC
         i        = IN
-        longNode = OM
-        argPeri  = W
-        meanAnom = MA
+        Ω = OM
+        ω  = W
+        m = MA
+        
     }
     
     init( jd: Double, pos :Vector, vel :Vector ) {
@@ -55,18 +65,19 @@ class KepElements {
         
         var oa = OrbitalElements()
         keplerian( GM, ps, &oa )
-        
+        /*Ω = OM
+         ω  = W*/
         jd0 = jd
         a = oa.a
         e = oa.e
         i = oa.i
-        longNode = oa.longnode
-        argPeri  = oa.argperi
-        meanAnom = oa.meananom
+        Ω = oa.longnode
+        ω = oa.argperi
+        m = oa.meananom
     }
     
     func getEclipticalVector( pos :inout Vector, vel :inout Vector ) {
-        let oe = OrbitalElements( a: a, e: e, i: i, longnode: longNode, argperi: argPeri, meananom: meanAnom )
+        let oe = OrbitalElements( a: a, e: e, i: i, longnode: Ω, argperi: ω, meananom: m )
         var state = PhaseState();
         cartesian( GM, oe, &state )
         pos[0] = state.x
@@ -78,7 +89,7 @@ class KepElements {
     }
     
     func getEclipticalPosition( GMS :Double, jd :Double, pos :inout Vector, vel :inout Vector ) {
-        let oe = OrbitalElements( a: a, e: e, i: i, longnode: longNode, argperi: argPeri, meananom: meanAnom )
+        let oe = OrbitalElements( a: a, e: e, i: i, longnode: Ω , argperi: ω, meananom: m )
         var state = PhaseState();
         ecliptical_position( jd - jd0, GMS, oe, &state )
         

@@ -19,6 +19,7 @@ class Asteroid: AstroBase{
     var ObservationEpoch     : Double?
     
     var Element              :[AsteroidElement] = [AsteroidElement]()
+    var NewElem              :Elements = Elements()
     var IsElement            :Bool = false
     var coeff                :[ChebyshevCoeff]  = [ChebyshevCoeff]()
     var IsState              :Bool = false
@@ -60,6 +61,11 @@ class Asteroid: AstroBase{
         IsElement = true
     }
     
+    func NewKeplerianElements( from: Double, to: Double ) {
+        NewElem = Elements(name: AsteroidName! )
+        NewElem.InitWithJPLHorizons(from: from, to: to)
+    }
+    
     func StateVect( from: Double, to: Double ) {
         let hor :JPLHorizon = JPLHorizon(BodyName: self.AsteroidName! )
         CalcPeriod(hor: hor, jdStart: from, jdEnd: to)
@@ -70,7 +76,7 @@ class Asteroid: AstroBase{
     
     func calcDailyCoeff( pos :[AsteroidXYZPosition], epoc :Double )->ChebyshevCoeff {
         
-        var item : ChebyshevCoeff = ChebyshevCoeff()
+        let item : ChebyshevCoeff = ChebyshevCoeff()
         // Calc Chebyshev poly for positons
         item.startEpoc = epoc
         item.endEpoc   = epoc + 1.0
@@ -120,13 +126,12 @@ class Asteroid: AstroBase{
             let pos_slice = pos[minRange...maxRange]
             let pos2 :[AsteroidXYZPosition] = Array<AsteroidXYZPosition>( pos_slice )
             coeff[j] = calcDailyCoeff( pos: pos2, epoc:jd )
-            
         }
     }
     
     func HeliocentricEclipticalPositionElement( jd: Double, pos : inout Vector, vel : inout Vector ) -> Bool {
-        var bRet = false
-        var kepl = Kepler()
+        let bRet = false
+        _ = Kepler()
         var minDT :Double = jd - Element[0].JDTB
         var minInd:Int = 0
         let jplDE = JPLDE()
@@ -206,14 +211,22 @@ class Asteroid: AstroBase{
      *  vel  :Vector     body velocity x,y,z vector  (Eclipical Coord.)  *
      *                                                                   *
      *********************************************************************/
-    func Q( t :Double, GM :Double, kep :KepElements, pos : inout Vector, vel :inout Vector) {
-        kep.getEclipticalPosition(GMS: GM, jd: t, pos: &pos, vel: &vel)
+    func Q( t :Double, GM :Double, kep :KepElements, pos : inout Vector, vel :inout Vector, flag :Bool ) {
+        if( flag ) {
+            kep.getEclipticalPosition(GMS: GM, jd: t, pos: &pos, vel: &vel)
+        } else {
+            kep.getEclipticalPosition(GMS: GM, jd: t, pos: &pos, vel: &vel)
+        }
     }
     
-    func Q( t :Double, GM :Double, kep :KepElements ) -> Vector{
+    func Q( t :Double, GM :Double, kep :KepElements , flag :Bool ) -> Vector{
         var q_pos :Vector = Vector([0.0,0.0,0.0])
         var q_dot :Vector = Vector([0.0,0.0,0.0])
-        kep.getEclipticalPosition(GMS: GM, jd: t, pos: &q_pos, vel: &q_dot)
+        if( flag ) {
+            kep.getEclipticalVector(pos: &q_pos, vel: &q_dot)
+        } else {
+            kep.getEclipticalPosition(GMS: GM, jd: t, pos: &q_pos, vel: &q_dot)
+        }
         
         return q_pos
     }
@@ -261,11 +274,11 @@ class Asteroid: AstroBase{
         return jplDE.SunBaryEclPos(t: t)
     }
     
-    func P( t :Double, GM :Double, kep :KepElements, jplDE :JPLDE ) -> Vector {
-        return Q(t: t, GM: GM, kep: kep) - E( t: t, jplDE: jplDE )
+    func P( t :Double, GM :Double, kep :KepElements, jplDE :JPLDE , flag :Bool ) -> Vector {
+        return Q(t: t, GM: GM, kep: kep, flag: flag) - E( t: t, jplDE: jplDE )
     }
     
-    func RelativisticLightTimeCorrection( t: Double, kep :KepElements , jplDE :JPLDE )->Double {
+    func RelativisticLightTimeCorrection( t: Double, kep :KepElements , jplDE :JPLDE, flag :Bool )->Double {
         var tau = 0.0
         var tau_old = 0.0
         let GMB = sqrt( jplDE.GetGMB() )
@@ -276,7 +289,7 @@ class Asteroid: AstroBase{
         var s_pos :Vector = Vector([0.0,0.0,0.0])
         
         repeat {
-            Q(t: t - tau, GM: GMB, kep: kep, pos: &q_pos, vel: &q_dot)
+            Q(t: t - tau, GM: GMB, kep: kep, pos: &q_pos, vel: &q_dot, flag: flag)
             E(t: t, jplDE: jplDE, pos: &e_pos, vel: &e_dot)
             S(t: t, jplDE: jplDE, pos: &s_pos )
             
@@ -300,15 +313,15 @@ class Asteroid: AstroBase{
     
     }
     
-    func EclipticalApparentPositionVector( jplDE :JPLDE, ta :Double )->Vector  {
+    func EclipticalApparentPositionVector( kep : KepElements,jplDE :JPLDE, ta :Double , flag :Bool )->Vector  {
         
         let GM          = sqrt( jplDE.GetGMB() )
-        let AstrElement = SelectElement(t: ta)
-        let kep         = KepElements(aElem: AstrElement)
-        let t = ta + RelativisticLightTimeCorrection(t: ta, kep: kep, jplDE: jplDE)
+        //let AstrElement = SelectElement(t: ta)
+        //let kep         = KepElements(aElem: AstrElement)
+        let t = ta + RelativisticLightTimeCorrection(t: ta, kep: kep, jplDE: jplDE, flag: flag)
     
-        let p_ecl_pos = P(t: t, GM: GM, kep: kep, jplDE: jplDE )
-        let q_ecl_pos = Q(t: t, GM: GM, kep: kep )
+        let p_ecl_pos = P(t: t, GM: GM, kep: kep, jplDE: jplDE, flag: flag )
+        let q_ecl_pos = Q(t: t, GM: GM, kep: kep , flag: flag )
         let e_ecl_pos = E(t: t, jplDE: jplDE )
         
         let p_norm = Norm(a: p_ecl_pos )
@@ -340,18 +353,37 @@ class Asteroid: AstroBase{
         //
     }
     
-    func EquatorialApparentPositionVector(jplDE: JPLDE, ta: Double ) -> Vector {
+    
+    func EquatorialApparentPositionVector( kep :KepElements ,jplDE: JPLDE, ta: Double, flag :Bool ) -> Vector {
         let tb = BarycentricDyanamicalTime(jd: ta )
-        let pos = EclipticalApparentPositionVector(jplDE: jplDE, ta: tb )
+        let pos = EclipticalApparentPositionVector(kep: kep, jplDE: jplDE, ta: tb , flag: flag )
         return EclipticalToEquatorial(a: pos, jd: Equinox2000 )
+    }
+    
+    func EquatorialApparentPosition( kep: KepElements, jplDE :JPLDE, t :Double, flag :Bool ) -> EquatorialCoordinate {
+        
+        let state = EquatorialApparentPositionVector(kep: kep, jplDE: jplDE, ta: t, flag: flag)
+        let eqel = EquatorialCoordinate(cartesian: state )
+        
+        return eqel
     }
     
     func EquatorialApparentPosition( jplDE :JPLDE, t :Double ) -> EquatorialCoordinate {
         
-        let state = EquatorialApparentPositionVector(jplDE: jplDE, ta: t)
-        var eqel = EquatorialCoordinate(cartesian: state )
-        //let a = Date(JD: t )
-        //return eqel.precessed(from: 2000.0, to: a.year)
+        let AstrElement = SelectElement(t: t)
+        let kep = KepElements( aElem: AstrElement )
+        let state = EquatorialApparentPositionVector(kep: kep, jplDE: jplDE, ta: t, flag: false)
+        let eqel = EquatorialCoordinate(cartesian: state )
+        
+        return eqel
+    }
+    
+    func EquatorialApparentPositionNew( jplDE :JPLDE, t :Double ) -> EquatorialCoordinate {
+        
+        let kep = NewElem.val(t: t)
+        let state = EquatorialApparentPositionVector(kep: kep, jplDE: jplDE, ta: t, flag: true )
+        let eqel = EquatorialCoordinate(cartesian: state )
+        
         return eqel
     }
     
