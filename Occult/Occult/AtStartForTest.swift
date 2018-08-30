@@ -109,6 +109,11 @@ class AtStartForTest{
         let sep2 = true_pos.angularSeparation( from: ele2_app )
         print( "Angular Separation:  \(sep2)" )
         
+        let ady = AstDys2()
+        let adyLine = ady.read()
+        for i in 0...20 {
+            print( adyLine[i] )
+        }
  
     }
 }
