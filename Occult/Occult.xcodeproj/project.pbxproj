@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3104DDD4212F0F6E0060A003 /* KepElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3104DDD3212F0F6E0060A003 /* KepElements.swift */; };
 		3104DDD7212F0FD80060A003 /* kepcart.c in Sources */ = {isa = PBXBuildFile; fileRef = 3104DDD6212F0FD80060A003 /* kepcart.c */; };
+		3126FDF1213AE06C0051A82E /* DE_Ephemeris.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3126FDF0213AE06C0051A82E /* DE_Ephemeris.bin */; };
 		31779E59212F5BDB005752BC /* Spherical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31779E58212F5BDB005752BC /* Spherical.swift */; };
 		31779E79212FDFA5005752BC /* CLLocation+Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31779E5C212FDFA5005752BC /* CLLocation+Transform.swift */; };
 		31779E7A212FDFA5005752BC /* JulianDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31779E5D212FDFA5005752BC /* JulianDay.swift */; };
@@ -38,7 +39,7 @@
 		31779EA52133F464005752BC /* Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31779EA42133F464005752BC /* Elements.swift */; };
 		31779EA721342EB5005752BC /* Coeff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31779EA621342EB5005752BC /* Coeff.swift */; };
 		317B14A9213815E300BEB89F /* AstDys2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B14A8213815E300BEB89F /* AstDys2.swift */; };
-		31D59A28211DC7050071D3CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A27211DC7050071D3CE /* AppDelegate.swift */; };
+		31D59A28211DC7050071D3CE /* a.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A27211DC7050071D3CE /* a.swift */; };
 		31D59A2A211DC7050071D3CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D59A29211DC7050071D3CE /* ViewController.swift */; };
 		31D59A2C211DC7060071D3CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31D59A2B211DC7060071D3CE /* Assets.xcassets */; };
 		31D59A2F211DC7060071D3CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31D59A2D211DC7060071D3CE /* Main.storyboard */; };
@@ -108,6 +109,7 @@
 		3104DDD3212F0F6E0060A003 /* KepElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KepElements.swift; sourceTree = "<group>"; };
 		3104DDD5212F0FD80060A003 /* kepcart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kepcart.h; sourceTree = "<group>"; };
 		3104DDD6212F0FD80060A003 /* kepcart.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = kepcart.c; sourceTree = "<group>"; };
+		3126FDF0213AE06C0051A82E /* DE_Ephemeris.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = DE_Ephemeris.bin; path = ../../../../../Desktop/DE_Ephemeris.bin; sourceTree = "<group>"; };
 		31779E58212F5BDB005752BC /* Spherical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spherical.swift; sourceTree = "<group>"; };
 		31779E5C212FDFA5005752BC /* CLLocation+Transform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocation+Transform.swift"; sourceTree = "<group>"; };
 		31779E5D212FDFA5005752BC /* JulianDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JulianDay.swift; sourceTree = "<group>"; };
@@ -139,7 +141,7 @@
 		31779EA621342EB5005752BC /* Coeff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coeff.swift; sourceTree = "<group>"; };
 		317B14A8213815E300BEB89F /* AstDys2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstDys2.swift; sourceTree = "<group>"; };
 		31D59A24211DC7050071D3CE /* Occult.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Occult.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		31D59A27211DC7050071D3CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		31D59A27211DC7050071D3CE /* a.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = a.swift; sourceTree = "<group>"; };
 		31D59A29211DC7050071D3CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		31D59A2B211DC7060071D3CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31D59A2E211DC7060071D3CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -320,7 +322,7 @@
 				31D59A5B211DD2990071D3CE /* JPLDE */,
 				31D59A58211DD2910071D3CE /* AstroBase */,
 				31D59A53211DD2830071D3CE /* Stream */,
-				31D59A27211DC7050071D3CE /* AppDelegate.swift */,
+				31D59A27211DC7050071D3CE /* a.swift */,
 				31D59A99211DFC820071D3CE /* AtStartForTest.swift */,
 				31D59A97211DFB4C0071D3CE /* DefaultConfig.swift */,
 				31D59A29211DC7050071D3CE /* ViewController.swift */,
@@ -405,6 +407,7 @@
 			isa = PBXGroup;
 			children = (
 				31D5A09021218C820071D3CE /* mpcorb_extended.json */,
+				3126FDF0213AE06C0051A82E /* DE_Ephemeris.bin */,
 				31D59FF1211F14600071D3CE /* JPLDE */,
 			);
 			path = data;
@@ -577,6 +580,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31D59FF3211F14610071D3CE /* unxp2000.405 in Resources */,
+				3126FDF1213AE06C0051A82E /* DE_Ephemeris.bin in Resources */,
 				31D59A2C211DC7060071D3CE /* Assets.xcassets in Resources */,
 				31779E7F212FDFA5005752BC /* Info.plist in Resources */,
 				31D5A09121218C830071D3CE /* mpcorb_extended.json in Resources */,
@@ -661,7 +665,7 @@
 				31779E8C212FDFA5005752BC /* DegreeAngle.swift in Sources */,
 				31D59A77211DD2AC0071D3CE /* MatrixTrigonometry.swift in Sources */,
 				31D59A7D211DD2AC0071D3CE /* Vector.swift in Sources */,
-				31D59A28211DC7050071D3CE /* AppDelegate.swift in Sources */,
+				31D59A28211DC7050071D3CE /* a.swift in Sources */,
 				31779E8A212FDFA5005752BC /* Double+Util.swift in Sources */,
 				31779E7B212FDFA5005752BC /* EclipticUtil.swift in Sources */,
 				31779E8B212FDFA5005752BC /* Intersection.swift in Sources */,
